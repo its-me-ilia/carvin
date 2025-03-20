@@ -1,0 +1,34 @@
+@import '../../colors/colors.scss';
+
+.carInfoCont {
+    margin-top: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.carInfoCont > div {
+    width: 48%;
+    border: 1px solid #00000019;
+    border-radius: 12px;
+    display: flex;
+    padding: 10px;
+    align-items: center;
+}
+
+.iconCont {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $lightBlue;
+    margin-right: 10px;
+}
+
+@media screen and (max-width: 768px) {
+    .carInfoCont > div {
+        width: 100%;
+    }
+}

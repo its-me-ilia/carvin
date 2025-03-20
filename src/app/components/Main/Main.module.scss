@@ -1,0 +1,56 @@
+@import "../../colors/colors.scss";
+
+.mainWrapper {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+}
+
+.mainWrapper > div {
+  margin-top: 100px;
+  max-width: 1440px;
+  width: 95%;
+  display: flex;
+}
+
+.cont {
+  max-width: 602px;
+  width: 90%;
+}
+
+.imageCont svg {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+@media screen and (max-width: 1224px) {
+  .imageCont svg {
+    width: 60%;
+  }
+}
+
+@media screen and (max-width: 936px) {
+
+  .mainWrapper > div {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .mainWrapper > div {
+    margin-top: 30px;
+  }
+
+  .imageCont svg {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: auto;
+    height: 40%;
+  }
+}
+
