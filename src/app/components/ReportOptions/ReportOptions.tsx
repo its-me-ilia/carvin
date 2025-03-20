@@ -1,5 +1,4 @@
 "use client";
-
 import styles from "./ReportOptions.module.scss";
 import Image from "next/image";
 import autoCheck from "../../assets/img/Group 282.png";

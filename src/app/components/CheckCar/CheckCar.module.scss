@@ -71,7 +71,7 @@
 
 .dottedText {
     color: $whiteTextColor;
-    text-decoration-style: dotted;
+    text-decoration: underline dotted;
 }
 
 @media screen and (max-width: 768px) {
