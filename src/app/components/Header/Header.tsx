@@ -6,16 +6,16 @@ import { CarBlackIcon } from "@/app/icons/CarBlackIcon";
 
 export const Header = () => {
   return (
-    <div className={styles.headerWrapper} style={{ backgroundColor: `#fff` }}>
+    <div className={styles.headerWrapper} >
       <div>
-        {/*<h1 className={styles.title}>
+        <h1 className={styles.title}>
           <CarIcon />
           <span>Vehicle2U</span>
-        </h1>*/}
-        <h1 className={styles.blackTitle}>
+        </h1>
+        {/*<h1 className={styles.blackTitle}>
           <CarBlackIcon/>
           <span>Vehicle2U</span>
-        </h1>
+        </h1>*/}
         <ul style={{color: `#000`}}>
           <li>SAMPLE REPORT</li>
           <li>PRICING</li>

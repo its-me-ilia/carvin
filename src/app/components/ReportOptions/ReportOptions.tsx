@@ -1,25 +1,28 @@
 "use client";
 import styles from "./ReportOptions.module.scss";
-import Image from "next/image";
-import autoCheck from "../../assets/img/Group 282.png";
-import carFax from "../../assets/img/image 3.png";
 import { useState } from "react";
+import { AutoCheckIcon } from "@/app/icons/AutoCheckIcon";
+import { CarFaxIcon } from "@/app/icons/CarFaxIcon";
 
 export const ReportOptions = () => {
   const [option, setOption] = useState("");
 
   const handleOption = (optionName: string) => {
-    setOption(optionName);
+    if (option === optionName) {
+      setOption('');
+    } else {
+      setOption(optionName)
+    }
   };
   console.log(option);
-  
+
   return (
     <div className={styles.optionsCont}>
       <div
         className={option === "AutoCheck" ? styles.active : ""}
         onClick={() => handleOption("AutoCheck")}
       >
-        <Image src={autoCheck} alt="AutoCheck Logo" />
+        <AutoCheckIcon />
         <div className={styles.priceAndResult}>
           <div>
             <h4>12€</h4>
@@ -36,7 +39,7 @@ export const ReportOptions = () => {
         className={option === "CARFAX" ? styles.active : ""}
         onClick={() => handleOption("CARFAX")}
       >
-        <Image src={carFax} alt="CARFAX Logo" />
+        <CarFaxIcon />
         <div className={styles.priceAndResult}>
           <div>
             <h4>

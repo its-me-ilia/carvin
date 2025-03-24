@@ -9,23 +9,23 @@ import { CarMainIcon } from "../../icons/CarMainIcon";
 export const Main = () => {
   return (
     <div className={styles.mainWrapper}>
-      {/*<div>
+      <div>
         <div className={styles.cont}>
           <InstructionText/>
           <CheckCar />
         </div>
-        <div className={styles.imageCont}>
+        <div className={styles.reportImageCont}>
           <CarMainIcon/>
         </div>
-      </div> */}
-      <div>
+      </div> 
+      {/*<div>
         <div>
           <VinReport />
         </div>
-        <div className={styles.imageCont}>
+        <div className={styles.reportImageCont}>
           <CarMainIcon/>
         </div>
-      </div>
+      </div>*/}
     </div>
   );
 };

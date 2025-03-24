@@ -39,7 +39,7 @@
     font-size: 22px !important;
 }
 
-.optionsCont img {
+.optionsCont svg {
     width: 160px;
     height: auto;
 }
@@ -49,8 +49,8 @@
 }
 
 @media screen and (max-width: 768px) {
-    .optionsCont img {
-        width: 120;
+    .optionsCont svg {
+        width: 100px;
         height: auto;
     }
 
@@ -61,5 +61,13 @@
 
     .cancelledPrice {
         font-size: 17px !important;
+    }
+
+    .priceAndResult > div > span {
+        font-size: 14px;
+    }
+
+    .priceAndResult input {
+        width: 18px;
     }
 }

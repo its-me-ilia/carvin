@@ -6,6 +6,7 @@
     background-color: $whiteTextColor;
     border-radius: 10px;
     padding: 16px;
+    margin-bottom: 30px;
 }
 
 .vinReport h1,
@@ -16,7 +17,7 @@
 
 .vinReport p {
     font-size: 18px;
-    color: #0314243c;
+    color: $grayBorderColor;
     margin-top: 4px;
     margin-bottom: 40px;
 }
@@ -34,7 +35,7 @@
     width: 100%;
     height: 0.5px;
     margin: 30px 0;
-    background-color: #00000019;
+    background-color: $grayBorderColor;
 }
 
 .buyReportCont {
@@ -95,6 +96,7 @@
 @media screen and (max-width: 768px) {
     .vinReport {
         margin-bottom: 100px;
+        margin: 0 auto;
     }
     .vin {
         font-size: 16px;

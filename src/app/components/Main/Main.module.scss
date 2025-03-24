@@ -17,12 +17,20 @@
 .cont {
   max-width: 602px;
   width: 90%;
+  margin-top: 40px;
 }
 
 .imageCont svg {
   position: absolute;
   bottom: 0;
   right: 0;
+}
+
+.reportImageCont svg {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 48%;
 }
 
 @media screen and (max-width: 1224px) {
@@ -32,7 +40,6 @@
 }
 
 @media screen and (max-width: 936px) {
-
   .mainWrapper > div {
     height: 100%;
     display: flex;
@@ -51,6 +58,19 @@
     right: 0;
     width: auto;
     height: 40%;
+  }
+
+  .reportImageCont {
+    width: 100vw;
+    height: 500px;
+    display: flex;
+    justify-content: flex-end;
+    position: relative;
+  }
+
+  .reportImageCont svg {
+    position: absolute;
+    width: 440px;
   }
 }
 
