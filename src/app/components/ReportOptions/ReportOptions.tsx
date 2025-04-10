@@ -14,7 +14,7 @@ export const ReportOptions = () => {
       setOption(optionName)
     }
   };
-  console.log(option);
+  console.log((1596.0 / 1000).toFixed(1));
 
   return (
     <div className={styles.optionsCont}>
@@ -31,7 +31,7 @@ export const ReportOptions = () => {
           <input
             type="radio"
             checked={option === "AutoCheck"}
-            onChange={() => handleOption("AutoCheck")}
+            readOnly
           />
         </div>
       </div>
@@ -51,7 +51,7 @@ export const ReportOptions = () => {
           <input
             type="radio"
             checked={option === "CARFAX"}
-            onChange={() => handleOption("CARFAX")}
+            readOnly
           />
         </div>
       </div>

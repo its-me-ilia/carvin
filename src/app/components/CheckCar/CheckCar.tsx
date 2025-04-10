@@ -1,32 +1,18 @@
 "use client";
 import styles from "./CheckCar.module.scss";
-import { SearchIcon } from "../../icons/SearchIcon";
 import { PlayIcon } from "../../icons/PlayIcon";
-import { LoadingIcon } from "../../icons/LoadingIcon";
-import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { handleVin } from "@/app/redux/slices/vinSlice/vinSlice";
+import { RootState } from "@/app/redux/store";
+import { CheckButton } from "../CheckButton/CheckButton";
 
 export const CheckCar = () => {
-  const [loading, setLoading] = useState(false);
-
-  const getLoading = () => {
-    setLoading(true);
-  };
-  
+  const dispatch = useDispatch()
   return (
     <div className={styles.mainCont}>
       <div className={styles.inputCont}>
-        <input type="text" placeholder="Enter VIN number" />
-        {loading ? (
-          <div>
-            <LoadingIcon />
-            <span>Loading...</span>
-          </div>
-        ) : (
-          <div className={styles.loading} onClick={getLoading}>
-            <SearchIcon />
-            <span>Check Car</span>
-          </div>
-        )}
+        <input type="text" onChange={(e) => dispatch(handleVin(e.target.value))} placeholder="Enter VIN number" />
+        <CheckButton/>
       </div>
       <div className={styles.helpCont}>
         <p>

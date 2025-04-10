@@ -1,0 +1,81 @@
+@import "../../colors/colors.scss";
+
+.textCont h2 {
+  font-size: 50px;
+  line-height: 100%;
+  font-weight: 400;
+  color: $whiteTextColor;
+  margin-top: 50px;
+}
+
+.textCont h3 {
+  font-size: 32px;
+  color: $whiteTextColor;
+  margin: 16px 0;
+  font-weight: 400;
+}
+
+.contactCont svg {
+  color: $primaryColor;
+}
+
+.contactCont {
+  display: flex;
+  background-color: $whiteTextColor;
+  margin-top: 15px;
+  border-radius: 8px;
+  align-items: center;
+  width: 70%;
+  padding: 8px 14px;
+}
+
+.contactCont input {
+  background-color: $whiteTextColor;
+  border: none;
+  outline: none;
+  padding: 8px;
+  font-size: 18px;
+  max-width: 540px;
+  width: 100%;
+  border-radius: 8px;
+}
+
+.contactCont span {
+  font-size: 18px;
+  margin-left: 10px;
+}
+
+.textCont button {
+    width: 70%;
+    color: $whiteTextColor;
+    background-color: $primaryColor;
+    border: 1px solid $whiteTextColor;
+    border-radius: 10px;
+    padding: 14px 0;
+    margin-top: 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 936px) {
+  .textCont h2 {
+    font-size: 34px;
+  }
+
+  .textCont h1 {
+    font-size: 40px;
+  }
+
+  .textCont p {
+    font-size: 16px;
+  }
+
+  .contactCont {
+    padding: 6px 14px;
+  }
+
+  .contactCont,
+  .textCont button {
+    width: 100%;
+  }
+}

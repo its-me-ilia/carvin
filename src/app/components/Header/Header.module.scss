@@ -43,7 +43,7 @@
     color: $whiteTextColor;
 }
 
-.headerWrapper a {
+.headerWrapper a[href='/contactUs'] {
     display: flex;
     justify-content: center;
     align-items: center;
