@@ -2,7 +2,6 @@ import styles from "./Header.module.scss";
 import Link from "next/link";
 import { ContactIcon } from "../../icons/ContactIcon";
 import { CarIcon } from "../../icons/CarIcon";
-import { CarBlackIcon } from "@/app/icons/CarBlackIcon";
 
 export const Header = () => {
   return (

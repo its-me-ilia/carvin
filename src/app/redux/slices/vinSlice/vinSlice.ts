@@ -1,19 +1,17 @@
-import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { createSlice } from "@reduxjs/toolkit";
 
-const initialState = '';
+const initialState = "";
 
 const vinSlice = createSlice({
   name: "vin",
   initialState,
   reducers: {
-    handleVin: (state, action) => {
-      return action.payload
-    }
+    handleVin: (_, action) => {
+      return action.payload;
+    },
   },
 });
 
-export const { handleVin } =
-  vinSlice.actions;
+export const { handleVin } = vinSlice.actions;
 
 export default vinSlice.reducer;
-

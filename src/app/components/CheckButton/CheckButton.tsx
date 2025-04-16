@@ -8,7 +8,7 @@ import axios from "axios";
 
 export const CheckButton = () => {
   const [loading, setLoading] = useState(false);
-  const [carInfo, setCarInfo] = useState<any | null>(null);
+  const [carInfo, setCarInfo] = useState<unknown | null>(null);
   const vin = useSelector((state: RootState) => state.vin);
   console.log(vin);
   
