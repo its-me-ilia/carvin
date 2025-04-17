@@ -1,9 +1,14 @@
+'use client'
 import styles from "./VinReport.module.scss";
 import { DocumentIcon } from "@/app/icons/DocumentIcon";
 import { CarMainInfo } from "../CarMainInfo/CarMainInfo";
 import { ReportOptions } from "../ReportOptions/ReportOptions";
+import { useSelector } from "react-redux";
+import { RootState } from "@/app/redux/store";
 
 export const VinReport = () => {
+  const price = useSelector((state: RootState) => state.reportOption)
+
   return (
     <div className={styles.vinReport}>
       <div>
@@ -14,7 +19,7 @@ export const VinReport = () => {
         <div className={styles.hr}></div>
         <ReportOptions/>
         <div className={styles.buyReportCont}>
-          <h3>Service Fee <span className={styles.finalPrice}>12€</span></h3>
+          <h3>Service Fee <span className={styles.finalPrice}>{price}€</span></h3>
           <button><DocumentIcon/><span>Buy your report</span></button>
           <div>
             <input type="checkbox" />

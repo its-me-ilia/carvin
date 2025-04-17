@@ -3,24 +3,28 @@ import styles from "./ReportOptions.module.scss";
 import { useState } from "react";
 import { AutoCheckIcon } from "@/app/icons/AutoCheckIcon";
 import { CarFaxIcon } from "@/app/icons/CarFaxIcon";
+import { useDispatch } from "react-redux";
+import { handleReportOption } from "@/app/redux/slices/reportOptionSice/reportOption";
 
 export const ReportOptions = () => {
   const [option, setOption] = useState("");
+  const dispatch = useDispatch()
 
-  const handleOption = (optionName: string) => {
+  const handleOption = (optionName: string, price: number) => {
     if (option === optionName) {
       setOption('');
+      dispatch(handleReportOption(0))
     } else {
       setOption(optionName)
+      dispatch(handleReportOption(price))
     }
   };
-  console.log((1596.0 / 1000).toFixed(1));
 
   return (
     <div className={styles.optionsCont}>
       <div
         className={option === "AutoCheck" ? styles.active : ""}
-        onClick={() => handleOption("AutoCheck")}
+        onClick={() => handleOption("AutoCheck", 12)}
       >
         <AutoCheckIcon />
         <div className={styles.priceAndResult}>
@@ -37,7 +41,7 @@ export const ReportOptions = () => {
       </div>
       <div
         className={option === "CARFAX" ? styles.active : ""}
-        onClick={() => handleOption("CARFAX")}
+        onClick={() => handleOption("CARFAX", 35)}
       >
         <CarFaxIcon />
         <div className={styles.priceAndResult}>

@@ -42,6 +42,7 @@
 @media screen and (max-width: 936px) {
   .mainWrapper > div {
     height: 100%;
+    height: fit-content;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -50,14 +51,6 @@
   
   .mainWrapper > div {
     margin-top: 30px;
-  }
-
-  .imageCont svg {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    width: auto;
-    height: 40%;
   }
 
   .reportImageCont {

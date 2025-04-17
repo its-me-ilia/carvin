@@ -1,12 +1,16 @@
+import { Footer } from "../Footer/Footer";
 import { Header } from "../Header/Header";
 import { Main } from "../Main/Main";
-import styles from './Wrapper.module.scss'
+import styles from "./Wrapper.module.scss";
 
 export const Wrapper = () => {
   return (
     <div className={styles.wrapper}>
-      <Header />
-      <Main/>
+      <div className={styles.mainContent}>
+        <Header />
+        <Main />
+      </div>
+      <Footer/>
     </div>
   );
 };
