@@ -1,22 +1,32 @@
-import styles from './AboutUs.module.scss'
+import styles from "./AboutUs.module.scss";
 
 export const AboutUs = () => {
   return (
     <div className={styles.aboutUsCont}>
-      <h2>About Us</h2>
+      <h2>ჩვენს შესახებ</h2>
       <div>
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum
-          doloremque quisquam molestias, facere magni adipisci nihil doloribus,
-          natus odio fugiat saepe, eligendi reiciendis quasi quis inventore
-          exercitationem. Quos, debitis molestias. Lorem ipsum dolor sit amet,
-          consectetur adipisicing elit. Ducimus quis praesentium autem eos
-          perspiciatis iste impedit, nulla vero in est illo sit? Consequatur
-          iure repudiandae modi saepe aliquid quos blanditiis! Lorem ipsum,
-          dolor sit amet consectetur adipisicing elit. Eveniet culpa voluptas,
-          ratione, pariatur fugiat labore dignissimos molestias at, nam
-          similique non? Quasi nisi facilis recusandae fugiat. Cum maiores ipsum
-          consequuntur!
+          VinAuto-ში ჩვენ გვჯერა, რომ მანქანის ყველა მყიდველი იმსახურებს სრულ
+          გამჭვირვალობას ცხოვრების ერთ-ერთი ყველაზე ღირებული აქტივის, მანქანის
+          შეძენისას. სწორედ ამიტომ, ჩვენ შევქმენით მარტივი, უსაფრთხო და საიმედო
+          გზა, რომ მიიღოთ ქარფაქსისა და აუტოჩეკის ანგარიშები ნებისმიერი
+          ამერიკული მანქანის VIN კოდით — ხელმისაწვდომ ფასად. ჩვენ ვართ
+          ავტომობილების ენთუზიასტების, მონაცემთა სპეციალისტებისა და
+          მომხმარებელთა მომსახურების მენეჯერებისგან დაკომპლექტებული
+          პროფესიონალების გუნდი, რომლებიც მზად არიან დაგეხმარონ ავტომობილის
+          შეძენის რთულ და რისკიან გზაზე. საავტომობილო და ტექნიკურ ინდუსტრიებში
+          მრავალწლიანი გამოცდილებით, ჩვენ ვიცით, რამდენად მნიშვნელოვანია ზუსტი
+          ინფორმაციის მიღება მანქანის შეძენამდე ან გაყიდვამდე. ჩვენ გთავაზობთ
+          მყისიერ წვდომას ავტომობილის ისტორიის დეტალურ ანგარიშებზე სანდო
+          წყაროებიდან, როგორიცაა Carfax და AutoCheck. ჩვენი მისია მარტივია:
+          მომხმარებლებისთვის ავტომობილის ისტორიის სანდო ინფორმაციის მიწოდება,
+          რათა მათ მიიღონ უფრო ჭკვიანური, უსაფრთხო და უფრო თავდაჯერებული
+          გადაწყვეტილებები. რატომ ავირჩიოთ ჩვენ? სწრაფი მიწოდება: მიიღეთ თქვენი
+          ანგარიში რამდენიმე წუთში. ხელმისაწვდომი ფასი: უმაღლესი ხარისხის
+          ანგარიშები ყველაზე დაბალ ფასად. უსაფრთხო ტრანზაქციები: თქვენი
+          მონაცემები და გადახდები ყოველთვის დაცულია. მეგობრული გუნდი:
+          გაქვთ შეკითხვა? ჩვენი მეგობრული გუნდი მზად არის დაგეხმაროთ. გმადლობთ,
+          რომ გვენდობით.
         </p>
       </div>
     </div>

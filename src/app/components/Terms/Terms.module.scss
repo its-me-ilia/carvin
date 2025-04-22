@@ -1,11 +1,20 @@
 @import '../../colors/colors.scss';
 
+.aboutUsCont {
+    padding-bottom: 2em;
+}
+
 .aboutUsCont h2 {
-    font-size: 50px;
+    font-size: 30px;
     color: $whiteTextColor;
+    margin-top: 14px;
 }
 
 .aboutUsCont p {
     color: $whiteTextColor;
     margin-top: 14px;
+}
+
+.aboutUsCont li {
+    color: $whiteTextColor;
 }

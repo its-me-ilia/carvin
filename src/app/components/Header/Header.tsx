@@ -18,10 +18,6 @@ export const Header = () => {
           <span>Vehicle2U</span>
         </h1>*/}
         <ul style={{ color: `#000` }}>
-          <li>SAMPLE REPORT</li>
-          <li>PRICING</li>
-          <li>FOR BUSINESS</li>
-          <li>HELP</li>
         </ul>
         <Link href={"/contactUs"}>
           <ContactIcon />
