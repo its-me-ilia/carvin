@@ -2,7 +2,6 @@ import styles from "./Main.module.scss";
 import { CheckCar } from "../CheckCar/CheckCar";
 import { InstructionText } from "../InstructionText/InstructionText";
 import { CarMainIcon } from "../../icons/CarMainIcon";
-import { VinReport } from "../VinReport/VinReport";
 
 export const Main = () => {
   return (
