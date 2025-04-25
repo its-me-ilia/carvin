@@ -60,8 +60,12 @@
 }
 
 @media screen and (max-width: 936px) {
-    .headerWrapper ul,
-    .headerWrapper h1 {
+    .headerWrapper a[href='/contactUs'] p {
         display: none;
     }
+
+    .headerWrapper a[href="/contactUs"]  {
+        width: fit-content;
+        padding: 0 12px;
+      }
   }
