@@ -6,7 +6,7 @@ const vinSlice = createSlice({
   name: "vin",
   initialState,
   reducers: {
-    handleVin: (_, action) => {
+    handleVin: (state, action) => {
       return action.payload;
     },
   },

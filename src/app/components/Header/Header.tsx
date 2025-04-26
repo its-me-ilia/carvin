@@ -10,15 +10,14 @@ export const Header = () => {
         <h1 className={styles.title}>
           <Link href={"/"}>
             <CarIcon />
-            <span>Vehicle2U</span>
+            <span>VinAuto</span>
           </Link>
         </h1>
         {/*<h1 className={styles.blackTitle}>
           <CarBlackIcon/>
           <span>Vehicle2U</span>
         </h1>*/}
-        <ul style={{ color: `#000` }}>
-        </ul>
+        <ul style={{ color: `#000` }}></ul>
         <Link href={"/contactUs"}>
           <ContactIcon />
           <p>Contact Us</p>

@@ -11,11 +11,12 @@ export const CheckButton = () => {
   const [carInfo, setCarInfo] = useState<unknown | null>(null);
   const vin = useSelector((state: RootState) => state.vin);
   console.log(vin);
-  
 
   const decodeVin = async () => {
     try {
-      const result = await axios.get(`https://carapi.app/api/vin/SALWR2VF1GA556677`);
+      const result = await axios.get(
+        `https://carapi.app/api/vin/SALWR2VF1GA556677`
+      );
       if (result?.data) {
         setCarInfo(result.data);
       }
@@ -32,7 +33,6 @@ export const CheckButton = () => {
   };
 
   console.log(carInfo);
-  
 
   return (
     <div>

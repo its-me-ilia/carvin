@@ -10,7 +10,7 @@ export const ContactUs = () => {
       <form>
         <div className={styles.contactCont}>
           <div>
-            <PhoneIcon/>
+            <PhoneIcon />
           </div>
           <div>
             <span>+995</span>
@@ -19,7 +19,7 @@ export const ContactUs = () => {
         </div>
         <div className={styles.contactCont}>
           <div>
-            <TIcon/>
+            <TIcon />
           </div>
           <input type="text" placeholder="მესიჯი" />
         </div>

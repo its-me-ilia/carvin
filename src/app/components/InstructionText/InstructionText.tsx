@@ -1,4 +1,4 @@
-import styles from './InstructionText.module.scss'
+import styles from "./InstructionText.module.scss";
 
 export const InstructionText = () => {
   return (

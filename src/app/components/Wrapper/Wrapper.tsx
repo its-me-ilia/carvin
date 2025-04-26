@@ -10,7 +10,7 @@ export const Wrapper = () => {
         <Header />
         <Main />
       </div>
-      <Footer/>
+      <Footer />
     </div>
   );
 };

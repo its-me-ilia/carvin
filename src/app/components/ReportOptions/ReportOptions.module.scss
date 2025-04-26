@@ -1,74 +1,74 @@
-@import '../../colors/colors.scss';
+@import "../../colors/colors.scss";
 
 .optionsCont > div {
-    display: flex;
-    justify-content: space-between;
-    box-shadow: 4px 4px 10px #f1f1f1;
-    border-radius: 12px;
-    border: 1px solid #00000019;
-    padding: 10px;
-    margin-top: 10px;
-    cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  box-shadow: 4px 4px 10px #f1f1f1;
+  border-radius: 12px;
+  border: 1px solid #00000019;
+  padding: 10px;
+  margin-top: 10px;
+  cursor: pointer;
 }
 
 .priceAndResult {
-    display: flex;
+  display: flex;
 }
 
 .priceAndResult h4 {
-    text-align: center;
-    font-size: 28px;
+  text-align: center;
+  font-size: 28px;
 }
 
 .priceAndResult h4 span {
-    font-size: 28px;
+  font-size: 28px;
 }
 
 .priceAndResult input {
-    width: 22px;
-    margin-left: 10px;
+  width: 22px;
+  margin-left: 10px;
 }
 
 .salePrice {
-    color: $primaryColor;
+  color: $primaryColor;
 }
 
 .cancelledPrice {
-    color: #0314243c;
-    text-decoration: line-through #0314243c;
-    margin-right: 10px;
-    font-size: 22px !important;
+  color: #0314243c;
+  text-decoration: line-through #0314243c;
+  margin-right: 10px;
+  font-size: 22px !important;
 }
 
 .optionsCont svg {
-    width: 160px;
-    height: auto;
+  width: 160px;
+  height: auto;
 }
 
 .active {
-    border: 1px solid $primaryColor !important;
+  border: 1px solid $primaryColor !important;
 }
 
 @media screen and (max-width: 768px) {
-    .optionsCont svg {
-        width: 100px;
-        height: auto;
-    }
+  .optionsCont svg {
+    width: 100px;
+    height: auto;
+  }
 
-    .priceAndResult h4,
-    .priceAndResult h4 span {
-        font-size: 22px;
-    }
+  .priceAndResult h4,
+  .priceAndResult h4 span {
+    font-size: 22px;
+  }
 
-    .cancelledPrice {
-        font-size: 17px !important;
-    }
+  .cancelledPrice {
+    font-size: 17px !important;
+  }
 
-    .priceAndResult > div > span {
-        font-size: 14px;
-    }
+  .priceAndResult > div > span {
+    font-size: 14px;
+  }
 
-    .priceAndResult input {
-        width: 18px;
-    }
+  .priceAndResult input {
+    width: 18px;
+  }
 }

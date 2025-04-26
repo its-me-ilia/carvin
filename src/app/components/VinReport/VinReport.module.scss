@@ -1,114 +1,114 @@
-@import '../../colors/colors.scss';
+@import "../../colors/colors.scss";
 
 .vinReport {
-    max-width: 560px;
-    width: 90%;
-    background-color: $whiteTextColor;
-    border-radius: 10px;
-    padding: 16px;
-    margin-bottom: 30px;
+  max-width: 560px;
+  width: 90%;
+  background-color: $whiteTextColor;
+  border-radius: 10px;
+  padding: 16px;
+  margin-bottom: 30px;
 }
 
 .vinReport h1,
 .carInfoCont h4,
 .priceAndResult h4 {
-    color: $darkBlueColor;
+  color: $darkBlueColor;
 }
 
 .vinReport p {
-    font-size: 18px;
-    color: $grayBorderColor;
-    margin-top: 4px;
-    margin-bottom: 40px;
+  font-size: 18px;
+  color: $grayBorderColor;
+  margin-top: 4px;
+  margin-bottom: 40px;
 }
 
 .vin {
-    color: $primaryColor;
-    padding: 14px 22px;
-    border-radius: 50px;
-    background-color: $lightBlue;
-    display: inline;
-    border: 1px solid $primaryColor;
+  color: $primaryColor;
+  padding: 14px 22px;
+  border-radius: 50px;
+  background-color: $lightBlue;
+  display: inline;
+  border: 1px solid $primaryColor;
 }
 
 .hr {
-    width: 100%;
-    height: 0.5px;
-    margin: 30px 0;
-    background-color: $grayBorderColor;
+  width: 100%;
+  height: 0.5px;
+  margin: 30px 0;
+  background-color: $grayBorderColor;
 }
 
 .buyReportCont {
-    background-color: $lightBlue;
-    border-radius: 12px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 20px;
-    gap: 10px;
-    padding: 10px 0;
+  background-color: $lightBlue;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+  gap: 10px;
+  padding: 10px 0;
 }
 
 .buyReportCont h3 {
-    font-size: 22px;
-    color: #bebebe;
-    font-weight: 400;
+  font-size: 22px;
+  color: #bebebe;
+  font-weight: 400;
 }
 
 .finalPrice {
-    color: $darkBlueColor;
-    font-weight: 600;
+  color: $darkBlueColor;
+  font-weight: 600;
 }
 
 .buyReportCont button {
-    width: 90%;
-    border: none;
-    background-color: $primaryColor;
-    padding: 16px 0;
-    border-radius: 10px;
-    color: $whiteTextColor;
-    font-size: 18px;
-    cursor: pointer;
+  width: 90%;
+  border: none;
+  background-color: $primaryColor;
+  padding: 16px 0;
+  border-radius: 10px;
+  color: $whiteTextColor;
+  font-size: 18px;
+  cursor: pointer;
 }
 
 .buyReportCont button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
 }
 
 .buyReportCont div {
-    display: flex;
-    gap: 10px;
+  display: flex;
+  gap: 10px;
 }
 
 .buyReportCont h4 {
-    font-weight: 400;
+  font-weight: 400;
 }
 
 .buyReportCont h4 span {
-    color: $primaryColor;
-    text-decoration: underline;
-    cursor: pointer;
+  color: $primaryColor;
+  text-decoration: underline;
+  cursor: pointer;
 }
 
 @media screen and (max-width: 768px) {
-    .vinReport {
-        margin-bottom: 100px;
-        margin: 0 auto;
-    }
-    .vin {
-        font-size: 16px;
-        padding: 10px 16px;
-    }
+  .vinReport {
+    margin-bottom: 100px;
+    margin: 0 auto;
+  }
+  .vin {
+    font-size: 16px;
+    padding: 10px 16px;
+  }
 
-    .vinReport h1 {
-        font-size: 28px;
-    }
+  .vinReport h1 {
+    font-size: 28px;
+  }
 
-    .vinReport p {
-        font-size: 15px;
-        margin-bottom: 50px;
-    }
+  .vinReport p {
+    font-size: 15px;
+    margin-bottom: 50px;
+  }
 }

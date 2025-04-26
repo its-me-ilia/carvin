@@ -46,15 +46,21 @@
 }
 
 .textCont button {
-    width: 70%;
-    color: $whiteTextColor;
-    background-color: $primaryColor;
-    border: 1px solid $whiteTextColor;
-    border-radius: 10px;
-    padding: 14px 0;
-    margin-top: 20px;
-    font-size: 16px;
-    cursor: pointer;
+  width: 70%;
+  color: $whiteTextColor;
+  background-color: $primaryColor;
+  border: 1px solid $whiteTextColor;
+  border-radius: 10px;
+  padding: 14px 0;
+  margin-top: 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.contactCont input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 @media screen and (max-width: 936px) {
@@ -82,5 +88,5 @@
   .textCont button {
     width: 100%;
     padding: 13px 14px;
-  } 
+  }
 }

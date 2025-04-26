@@ -1,52 +1,52 @@
 .footerCont {
-    width: 100%;
-    height: 200px;
-    background-color: rgb(247, 247, 247);
-  }
-  
-  .footerCont > div {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 70%;
-    justify-content: center;
-  }
-  
-  .footerCont > div > div {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 80%;
-    margin-top: 55px;
-  }
-  
-  .footerCont > div > div > div {
-    padding: 10px;
-  }
-  
-  .footerCont span {
-    padding: 0px 14px;
-  }
-  
-  .footerCont a {
-    cursor: pointer;
-    color: #000;
-    text-decoration: none;
-  }
-  
-  .footer-contact {
-    text-decoration: underline;
-    cursor: pointer;
-  }
-  
-  .footer-a,
-  .footer-p {
-    font-size: 15px;
-  }
+  width: 100%;
+  height: 200px;
+  background-color: rgb(247, 247, 247);
+}
 
-  @media screen and (max-width: 726px) {
-    .footerCont * {
-        font-size: 14px;
-    }
+.footerCont > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 70%;
+  justify-content: center;
+}
+
+.footerCont > div > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 80%;
+  margin-top: 55px;
+}
+
+.footerCont > div > div > div {
+  padding: 10px;
+}
+
+.footerCont span {
+  padding: 0px 14px;
+}
+
+.footerCont a {
+  cursor: pointer;
+  color: #000;
+  text-decoration: none;
+}
+
+.footer-contact {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.footer-a,
+.footer-p {
+  font-size: 15px;
+}
+
+@media screen and (max-width: 726px) {
+  .footerCont * {
+    font-size: 14px;
   }
+}

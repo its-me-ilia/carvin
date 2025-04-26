@@ -8,15 +8,15 @@ import { handleReportOption } from "@/app/redux/slices/reportOptionSice/reportOp
 
 export const ReportOptions = () => {
   const [option, setOption] = useState("");
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
   const handleOption = (optionName: string, price: number) => {
     if (option === optionName) {
-      setOption('');
-      dispatch(handleReportOption(0))
+      setOption("");
+      dispatch(handleReportOption(0));
     } else {
-      setOption(optionName)
-      dispatch(handleReportOption(price))
+      setOption(optionName);
+      dispatch(handleReportOption(price));
     }
   };
 
@@ -32,11 +32,7 @@ export const ReportOptions = () => {
             <h4>12€</h4>
             <span>Auction 1 Records</span>
           </div>
-          <input
-            type="radio"
-            checked={option === "AutoCheck"}
-            readOnly
-          />
+          <input type="radio" checked={option === "AutoCheck"} readOnly />
         </div>
       </div>
       <div
@@ -52,11 +48,7 @@ export const ReportOptions = () => {
             </h4>
             <span>Found 29 Records</span>
           </div>
-          <input
-            type="radio"
-            checked={option === "CARFAX"}
-            readOnly
-          />
+          <input type="radio" checked={option === "CARFAX"} readOnly />
         </div>
       </div>
     </div>

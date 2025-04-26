@@ -1,71 +1,71 @@
-@import '../../colors/colors.scss';
+@import "../../colors/colors.scss";
 
 .headerWrapper > div {
-    max-width: 1440px;
-    width: 90%;
-    height: 80px;
-    display: flex;
-    margin: 0 auto;
-    align-items: center;
-    justify-content: space-between;
+  max-width: 1440px;
+  width: 90%;
+  height: 80px;
+  display: flex;
+  margin: 0 auto;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .title {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .title span {
-    color: $whiteTextColor;
-    margin-left: 6px;
-    font-style: italic;
+  color: $whiteTextColor;
+  margin-left: 6px;
+  font-style: italic;
 }
 
 .blackTitle {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .blackTitle span {
-    color: #000;
-    margin-left: 6px;
+  color: #000;
+  margin-left: 6px;
 }
 
 .headerWrapper ul {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    color: $whiteTextColor;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  color: $whiteTextColor;
 }
 
 .headerWrapper li {
-    cursor: pointer;
-    color: $whiteTextColor;
+  cursor: pointer;
+  color: $whiteTextColor;
 }
 
-.headerWrapper a[href='/contactUs'] {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 180px;
-    height: 46px;
-    border: 1px solid $whiteTextColor;
-    border-radius: 8px;
-    background-color: $primaryColor;
+.headerWrapper a[href="/contactUs"] {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 180px;
+  height: 46px;
+  border: 1px solid $whiteTextColor;
+  border-radius: 8px;
+  background-color: $primaryColor;
 }
 
 .headerWrapper a p {
-    color: $whiteTextColor;
-    margin-left: 10px;
+  color: $whiteTextColor;
+  margin-left: 10px;
 }
 
 @media screen and (max-width: 936px) {
-    .headerWrapper a[href='/contactUs'] p {
-        display: none;
-    }
-
-    .headerWrapper a[href="/contactUs"]  {
-        width: fit-content;
-        padding: 0 12px;
-      }
+  .headerWrapper a[href="/contactUs"] p {
+    display: none;
   }
+
+  .headerWrapper a[href="/contactUs"] {
+    width: fit-content;
+    padding: 0 12px;
+  }
+}
