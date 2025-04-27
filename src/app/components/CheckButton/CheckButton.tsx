@@ -2,23 +2,24 @@ import { LoadingIcon } from "@/app/icons/LoadingIcon";
 import { SearchIcon } from "@/app/icons/SearchIcon";
 import { useState } from "react";
 import styles from "./CheckButton.module.scss";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "@/app/redux/store";
 import axios from "axios";
+import { handleCarInfo } from "@/app/redux/slices/carInfoSlice/carInfoSlice";
 
 export const CheckButton = () => {
   const [loading, setLoading] = useState(false);
-  const [carInfo, setCarInfo] = useState<unknown | null>(null);
   const vin = useSelector((state: RootState) => state.vin);
-  console.log(vin);
+
+  const dispatch = useDispatch()
 
   const decodeVin = async () => {
     try {
       const result = await axios.get(
-        `https://carapi.app/api/vin/SALWR2VF1GA556677`
+        `https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValuesExtended/${vin}?format=json`
       );
       if (result?.data) {
-        setCarInfo(result.data);
+        dispatch(handleCarInfo(result.data.Results))
       }
     } catch (err) {
       console.error(err);
@@ -27,12 +28,12 @@ export const CheckButton = () => {
     }
   };
 
+  
+
   const getInfo = () => {
     setLoading(true);
     decodeVin();
   };
-
-  console.log(carInfo);
 
   return (
     <div>

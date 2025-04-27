@@ -1,11 +1,13 @@
 import { configureStore } from "@reduxjs/toolkit";
 import vinSlice from './slices/vinSlice/vinSlice'
 import reportOptionSlice from './slices/reportOptionSice/reportOption'
+import carInfoSlice from './slices/carInfoSlice/carInfoSlice'
 
 export const store = configureStore({
     reducer: {
         vin: vinSlice,
-        reportOption: reportOptionSlice
+        reportOption: reportOptionSlice,
+        carInfo: carInfoSlice
     }
 })
 
