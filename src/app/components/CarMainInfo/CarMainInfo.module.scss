@@ -27,7 +27,7 @@
   margin-right: 10px;
 }
 
-.carInfoCont h4 {
+.informationCont {
   max-width: 145px;
 }
 
@@ -36,7 +36,8 @@
     width: 100%;
   }
 
-  .carInfoCont h4 {
-    max-width: 100%;
+  .informationCont {
+    max-width: 350px;
+    width: 90%;
   }
 }

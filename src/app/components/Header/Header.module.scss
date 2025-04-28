@@ -1,6 +1,6 @@
 @import "../../colors/colors.scss";
 
-.headerWrapper > div {
+.header {
   max-width: 1440px;
   width: 90%;
   height: 80px;
@@ -8,6 +8,10 @@
   margin: 0 auto;
   align-items: center;
   justify-content: space-between;
+}
+
+.whiteHeader {
+  background-color: $whiteTextColor;
 }
 
 .title {
@@ -21,7 +25,7 @@
   font-style: italic;
 }
 
-.blackTitle {
+.blackTitle a {
   display: flex;
   align-items: center;
 }
@@ -31,19 +35,7 @@
   margin-left: 6px;
 }
 
-.headerWrapper ul {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  color: $whiteTextColor;
-}
-
-.headerWrapper li {
-  cursor: pointer;
-  color: $whiteTextColor;
-}
-
-.headerWrapper a[href="/contactUs"] {
+.header a[href="/contactUs"] {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -54,17 +46,17 @@
   background-color: $primaryColor;
 }
 
-.headerWrapper a p {
+.header a p {
   color: $whiteTextColor;
   margin-left: 10px;
 }
 
 @media screen and (max-width: 936px) {
-  .headerWrapper a[href="/contactUs"] p {
+  .header a[href="/contactUs"] p {
     display: none;
   }
 
-  .headerWrapper a[href="/contactUs"] {
+  .header a[href="/contactUs"] {
     width: fit-content;
     padding: 0 12px;
   }

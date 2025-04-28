@@ -24,7 +24,7 @@ export const CarMainInfo = () => {
         <div className={styles.iconCont}>
           <MakeIcon />
         </div>
-        <div>
+        <div className={styles.informationCont}>
           <span>Make</span>
           <h4>{carInfo[0].Make}</h4>
         </div>
@@ -35,7 +35,7 @@ export const CarMainInfo = () => {
         </div>
         <div>
           <span>Model</span>
-          <h4>{carInfo[0].Model} {carInfo[0].Trim}</h4>
+          <h4>{carInfo[0].Model}</h4>
         </div>
       </div>
       <div>
