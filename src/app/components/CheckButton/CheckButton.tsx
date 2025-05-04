@@ -1,6 +1,6 @@
 import { LoadingIcon } from "@/app/icons/LoadingIcon";
 import { SearchIcon } from "@/app/icons/SearchIcon";
-import { useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import styles from "./CheckButton.module.scss";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "@/app/redux/store";
@@ -11,24 +11,43 @@ export const CheckButton = () => {
   const [loading, setLoading] = useState(false);
   const vin = useSelector((state: RootState) => state.vin);
 
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
-  const decodeVin = async () => {
+  const decodeVin = useCallback(async () => {
     try {
       const result = await axios.get(
         `https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValuesExtended/${vin}?format=json`
       );
       if (result?.data) {
-        dispatch(handleCarInfo(result.data.Results))
+        dispatch(handleCarInfo(result.data.Results));
       }
     } catch (err) {
       console.error(err);
     } finally {
       setLoading(false);
     }
-  };
+  }, [dispatch, vin]);
 
-  
+  const detectKeyDown = useCallback(
+    (e: KeyboardEvent) => {
+      if (e.key === "Enter" && vin) {
+        console.log("clicked on enter");
+        decodeVin();
+        setLoading(true);
+      } else {
+        console.log("not clicked");
+      }
+    },
+    [decodeVin, vin]
+  );
+
+  useEffect(() => {
+    document.addEventListener("keydown", detectKeyDown);
+
+    return () => {
+      document.removeEventListener("keydown", detectKeyDown);
+    };
+  }, [detectKeyDown]);
 
   const getInfo = () => {
     setLoading(true);

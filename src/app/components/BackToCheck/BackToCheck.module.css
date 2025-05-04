@@ -1,0 +1,8 @@
+.backCont {
+    display: flex;
+    margin-bottom: 4px;
+}
+
+.backCont svg {
+    cursor: pointer;
+}

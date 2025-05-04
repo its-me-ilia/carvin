@@ -5,6 +5,7 @@ import { CarMainInfo } from "../CarMainInfo/CarMainInfo";
 import { ReportOptions } from "../ReportOptions/ReportOptions";
 import { useSelector } from "react-redux";
 import { RootState } from "@/app/redux/store";
+import { BackToCheck } from "../BackToCheck/BackToCheck";
 
 export const VinReport = () => {
   const price = useSelector((state: RootState) => state.reportOption);
@@ -13,9 +14,10 @@ export const VinReport = () => {
   return (
     <div className={styles.vinReport}>
       <div>
+        <BackToCheck/>
         <h1>Select the desired VIN Report</h1>
         <p>Online payment with any VISA Mastercard</p>
-        <h3 className={styles.vin}>VIN: {carInfo[0].VIN}</h3>
+        <h3 className={styles.vin}>VIN: {carInfo[0].VIN.toUpperCase()}</h3>
         <CarMainInfo />
         <div className={styles.hr}></div>
         <ReportOptions />

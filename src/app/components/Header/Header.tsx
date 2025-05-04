@@ -18,7 +18,7 @@ export const Header = () => {
           <h1 className={styles.blackTitle}>
             <Link href={"/"}>
               <CarBlackIcon />
-              <span>Vehicle2U</span>
+              <span>VinAuto</span>
             </Link>
           </h1>
         ) : (
