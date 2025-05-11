@@ -76,11 +76,16 @@
 
 @media screen and (max-width: 768px) {
   .inputCont {
-    height: 46px;
+    height: 54px;
+    padding: 0 8px;
+  }
+
+  .inputCont input {
+    margin-left: 6px;
   }
 
   .inputCont div {
-    height: 32px;
+    height: 40px;
     font-size: 14px;
   }
 }
