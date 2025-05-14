@@ -1,20 +1,20 @@
 "use client";
 import styles from "./VinReport.module.scss";
-import { DocumentIcon } from "@/app/icons/DocumentIcon";
 import { CarMainInfo } from "../CarMainInfo/CarMainInfo";
 import { ReportOptions } from "../ReportOptions/ReportOptions";
 import { useSelector } from "react-redux";
 import { RootState } from "@/app/redux/store";
 import { BackToCheck } from "../BackToCheck/BackToCheck";
+import { BuyReport } from "../BuyReport/BuyReport";
 
 export const VinReport = () => {
-  const price = useSelector((state: RootState) => state.reportOption);
+  const reportOption = useSelector((state: RootState) => state.reportOption);
   const carInfo = useSelector((state: RootState) => state.carInfo);
 
   return (
     <div className={styles.vinReport}>
       <div>
-        <BackToCheck/>
+        <BackToCheck />
         <h1>Select the desired VIN Report</h1>
         <p>Online payment with any VISA Mastercard</p>
         <h3 className={styles.vin}>VIN: {carInfo[0].VIN.toUpperCase()}</h3>
@@ -23,12 +23,12 @@ export const VinReport = () => {
         <ReportOptions />
         <div className={styles.buyReportCont}>
           <h3>
-            Service Fee <span className={styles.finalPrice}>{price}€</span>
+            Service Fee{" "}
+            <span className={styles.finalPrice}>
+              {reportOption ? (reportOption === "carfax" ? 10 : 3) : 0}₾
+            </span>
           </h3>
-          <button>
-            <DocumentIcon />
-            <span>Buy your report</span>
-          </button>
+          <BuyReport />
           <div>
             <input type="checkbox" />
             <h4>

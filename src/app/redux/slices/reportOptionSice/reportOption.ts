@@ -1,14 +1,14 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const initialState: number = 0;
+const initialState: string = '';
 
 const reportOptionSlice = createSlice({
-  name: "option",
+  name: "reportOption",
   initialState,
   reducers: {
     handleReportOption: (state, action) => {
       return action.payload;
-    },
+    },  
   },
 });
 
