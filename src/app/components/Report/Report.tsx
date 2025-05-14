@@ -3,5 +3,10 @@ interface IReportProps {
 }
 
 export const Report: React.FC<IReportProps> = ({ report }) => {
-  return <div dangerouslySetInnerHTML={{ __html: report }} />;
+  return (
+    <div
+      style={{ background: "linear-gradient(#fff, #fff)" }}
+      dangerouslySetInnerHTML={{ __html: report }}
+    />
+  );
 };
