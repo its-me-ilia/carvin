@@ -1,6 +1,6 @@
 "use client";
 import { ArrowIcon } from "@/app/icons/ArrowIcon";
-import styles from "./BackToCheck.module.css";
+import styles from "./BackToCheck.module.scss";
 import { useDispatch } from "react-redux";
 import { handleCarInfo } from "@/app/redux/slices/carInfoSlice/carInfoSlice";
 

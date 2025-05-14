@@ -23,8 +23,6 @@ const ReportPage = () => {
     };
     getReport()
   }, [id]);
-
-  console.log(report);
   
   return <div>
     <Report report={report}/>

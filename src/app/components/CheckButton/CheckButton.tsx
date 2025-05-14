@@ -50,8 +50,10 @@ export const CheckButton = () => {
   }, [detectKeyDown]);
 
   const getInfo = () => {
-    setLoading(true);
-    decodeVin();
+    if (vin) {
+      setLoading(true);
+      decodeVin();
+    }
   };
 
   return (

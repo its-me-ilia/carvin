@@ -6,10 +6,11 @@ import { useSelector } from "react-redux";
 import { RootState } from "@/app/redux/store";
 import { BackToCheck } from "../BackToCheck/BackToCheck";
 import { BuyReport } from "../BuyReport/BuyReport";
+import { AgreeWithTerms } from "../AgreeWithTerms/AgreeWithTerms";
 
 export const VinReport = () => {
   const reportOption = useSelector((state: RootState) => state.reportOption);
-  const carInfo = useSelector((state: RootState) => state.carInfo);
+  const carInfo = useSelector((state: RootState) => state.carInfo);  
 
   return (
     <div className={styles.vinReport}>
@@ -29,12 +30,7 @@ export const VinReport = () => {
             </span>
           </h3>
           <BuyReport />
-          <div>
-            <input type="checkbox" />
-            <h4>
-              Agree with <span>Terms & Conditions</span>
-            </h4>
-          </div>
+          <AgreeWithTerms/>
         </div>
       </div>
     </div>

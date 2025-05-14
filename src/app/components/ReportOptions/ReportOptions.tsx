@@ -1,24 +1,32 @@
 "use client";
 import styles from "./ReportOptions.module.scss";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { AutoCheckIcon } from "@/app/icons/AutoCheckIcon";
 import { CarFaxIcon } from "@/app/icons/CarFaxIcon";
 import { useDispatch } from "react-redux";
 import { handleReportOption } from "@/app/redux/slices/reportOptionSice/reportOption";
+import { useRouter } from "next/navigation";
 
 export const ReportOptions = () => {
   const [option, setOption] = useState("");
   const dispatch = useDispatch();
+  const router = useRouter();
 
   const handleOption = (optionName: string) => {
     if (option === optionName) {
       setOption("");
-      dispatch(handleReportOption(''));
+      dispatch(handleReportOption(""));
     } else {
       setOption(optionName);
       dispatch(handleReportOption(optionName));
     }
   };
+
+  useEffect(() => {
+    if (router) {
+      dispatch(handleReportOption(""));
+    }
+  }, [router, dispatch]);
 
   return (
     <div className={styles.optionsCont}>

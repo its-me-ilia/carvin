@@ -5,12 +5,13 @@ import axios from "axios";
 import { useRouter } from "next/navigation";
 import { useCallback, useEffect, useState } from "react";
 import { useSelector } from "react-redux";
-import styles from './BuyReport.module.scss'
+import styles from "./BuyReport.module.scss";
 
-export const BuyReport = () => {
+export const BuyReport= ( ) => {
   const [id, setId] = useState("");
   const [loading, setLoading] = useState(false);
   const vin = useSelector((state: RootState) => state.vin);
+  const agreeWithTerms = useSelector((state: RootState) => state.agreeWithTerms);
   const reportOption = useSelector((state: RootState) => state.reportOption);
   const router = useRouter();
 
@@ -34,8 +35,10 @@ export const BuyReport = () => {
   }, [vin, reportOption]);
 
   const getId = () => {
-    idRequest();
-  };
+    if (reportOption && agreeWithTerms) {
+      idRequest();
+    }
+  };  
 
   useEffect(() => {
     if (id) {
