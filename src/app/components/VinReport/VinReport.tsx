@@ -6,7 +6,6 @@ import { useSelector } from "react-redux";
 import { RootState } from "@/app/redux/store";
 import { BackToCheck } from "../BackToCheck/BackToCheck";
 import { BuyReport } from "../BuyReport/BuyReport";
-import { AgreeWithTerms } from "../AgreeWithTerms/AgreeWithTerms";
 
 export const VinReport = () => {
   const reportOption = useSelector((state: RootState) => state.reportOption);
@@ -29,8 +28,7 @@ export const VinReport = () => {
               {reportOption ? (reportOption === "carfax" ? 10 : 3) : 0}₾
             </span>
           </h3>
-          <BuyReport />
-          <AgreeWithTerms/>
+          <BuyReport/>
         </div>
       </div>
     </div>
