@@ -1,0 +1,83 @@
+@import "../colors/colors.scss";
+
+.mainWrapper {
+  width: 100%;
+  min-height: 100vh;
+}
+
+.mainCont {
+  min-height: 100vh;
+}
+
+.content {
+  margin-top: 60px;
+  max-width: 1440px;
+  width: 95%;
+  margin: 0 auto;
+}
+
+.mainContent {
+  max-width: 602px;
+  width: 90%;
+  margin-top: 100px;
+}
+
+.mainCont h1 {
+    color: $whiteTextColor;
+}
+
+.imageCont svg {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.reportImageCont svg {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 48%;
+}
+
+@media screen and (max-width: 1224px) {
+  .imageCont svg {
+    width: 60%;
+  }
+}
+
+@media screen and (max-width: 936px) {
+  .content {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 30px;
+  }
+
+  .mainContent {
+    margin-top: 30px;
+  }
+
+  .imageCont svg {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: auto;
+    height: 40%;
+  }
+
+  .reportImageCont {
+    width: 100vw;
+    height: 500px;
+    display: flex;
+    justify-content: flex-end;
+    position: relative;
+  }
+
+  .reportImageCont svg {
+    position: absolute;
+    width: 440px;
+  }
+}
+

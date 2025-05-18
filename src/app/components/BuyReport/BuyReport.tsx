@@ -2,17 +2,16 @@ import { DocumentIcon } from "@/app/icons/DocumentIcon";
 import { LoadingIcon } from "@/app/icons/LoadingIcon";
 import { RootState } from "@/app/redux/store";
 import axios from "axios";
-import { useRouter } from "next/navigation";
 import { useCallback, useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import styles from "./BuyReport.module.scss";
 
 export const BuyReport = () => {
   const [id, setId] = useState("");
+  const [redirectUrl, setRedirectUrl] = useState('')
   const [loading, setLoading] = useState(false);
   const vin = useSelector((state: RootState) => state.vin);
   const reportOption = useSelector((state: RootState) => state.reportOption);
-  const router = useRouter();
 
   const idRequest = useCallback(async () => {
     setLoading(true);
@@ -27,6 +26,7 @@ export const BuyReport = () => {
       );
       if (result?.data) {
         setId(result.data.id);
+        setRedirectUrl(result.data.redirectUrl)
       }
     } catch (err) {
       console.error(err);
@@ -40,10 +40,10 @@ export const BuyReport = () => {
   };  
 
   useEffect(() => {
-    if (id) {
-      router.push(`report/${id}`);
+    if (redirectUrl) {
+      window.location.href = `${redirectUrl}`;
     }
-  }, [id, router]);
+  }, [redirectUrl]);
 
   console.log(id);
 
