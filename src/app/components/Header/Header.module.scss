@@ -16,6 +16,10 @@
 
 .title {
   display: flex;
+}
+
+.header a[href='/'] {
+  display: flex;
   align-items: center;
 }
 
@@ -23,11 +27,6 @@
   color: $whiteTextColor;
   margin-left: 6px;
   font-style: italic;
-}
-
-.blackTitle a {
-  display: flex;
-  align-items: center;
 }
 
 .blackTitle span {

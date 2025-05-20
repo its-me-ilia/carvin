@@ -6,6 +6,7 @@ import { useSelector } from "react-redux";
 import { RootState } from "@/app/redux/store";
 import { BackToCheck } from "../BackToCheck/BackToCheck";
 import { BuyReport } from "../BuyReport/BuyReport";
+import Link from "next/link";
 
 export const VinReport = () => {
   const reportOption = useSelector((state: RootState) => state.reportOption);
@@ -29,6 +30,7 @@ export const VinReport = () => {
             </span>
           </h3>
           <BuyReport/>
+          <h4>გაგრძელებით ეთანხმებით <Link href={'terms'}>წესებსა და პირობებს</Link></h4>
         </div>
       </div>
     </div>
