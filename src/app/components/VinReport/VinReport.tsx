@@ -15,15 +15,15 @@ export const VinReport = () => {
     <div className={styles.vinReport}>
       <div>
         <BackToCheck />
-        <h1>Select the desired VIN Report</h1>
-        <p>Online payment with any VISA Mastercard</p>
+        <h1>აირჩიეთ სასურველი რეპორტი</h1>
+        <p>მიიღება ყველა სახის საბანკო ბარათი</p>
         <h3 className={styles.vin}>VIN: {carInfo[0].VIN.toUpperCase()}</h3>
         <CarMainInfo />
         <div className={styles.hr}></div>
         <ReportOptions />
         <div className={styles.buyReportCont}>
           <h3>
-            Service Fee{" "}
+            რეპორტის ფასი:{" "}
             <span className={styles.finalPrice}>
               {reportOption ? (reportOption === "carfax" ? '7.99' : '4.99') : 0}₾
             </span>
