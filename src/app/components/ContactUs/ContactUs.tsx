@@ -40,8 +40,8 @@ export const ContactUs = () => {
 
   return (
     <div className={styles.textCont}>
-      <h2>Contact Us</h2>
-      <h3>Send us a question and our support team will respond soon 🚘✅</h3>
+      <h2>დაგვიკავშირდი</h2>
+      <h3>გამოგვიგზავნე შეტყობინება და ჩვენ უმოკლეს დროში დაგიკავშირდებით 🚘✅</h3>
       <form>
         <div className={styles.contactCont}>
           <div>

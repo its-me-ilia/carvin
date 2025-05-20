@@ -9,9 +9,10 @@ import { CarBlackIcon } from "@/app/icons/CarBlackIcon";
 
 export const Header = () => {
   const carInfo = useSelector((state: RootState) => state.carInfo);
+
   return (
     <div
-      className={carInfo.length > 0 ? styles.whiteHeader : styles.headerWrapper}
+      className={styles.whiteHeader}
     >
       <div className={styles.header}>
         {carInfo.length > 0 ? (
@@ -31,7 +32,7 @@ export const Header = () => {
         )}
         <Link href={"/contactUs"}>
           <ContactIcon />
-          <p>Contact Us</p>
+          <p>დაგვიკავშირდი</p>
         </Link>
       </div>
     </div>

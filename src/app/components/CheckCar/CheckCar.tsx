@@ -13,18 +13,18 @@ export const CheckCar = () => {
         <input
           type="text"
           onChange={(e) => dispatch(handleVin(e.target.value))}
-          placeholder="Enter VIN number"
+          placeholder="ჩაწერეთ VIN კოდი"
         />
         <CheckButton />
       </div>
       <div className={styles.helpCont}>
         <p>
-          <span className={styles.underlinedText}>Where</span>
-          <span className={styles.grayText}>can I find VIN</span>
+          <span className={styles.underlinedText}></span>
+          <span className={styles.grayText}></span>
         </p>
         <p>
           <PlayIcon />
-          <span className={styles.dottedText}>How it Works</span>
+          <span className={styles.dottedText}>როგორ შევამოწმო?</span>
         </p>
       </div>
     </div>

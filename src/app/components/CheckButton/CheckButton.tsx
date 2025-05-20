@@ -61,12 +61,12 @@ export const CheckButton = () => {
       {loading ? (
         <div>
           <LoadingIcon />
-          <span>Loading...</span>
+          <span>იტვირთება...</span>
         </div>
       ) : (
         <div className={styles.loading} onClick={getInfo}>
           <SearchIcon />
-          <span>Check Car</span>
+          <span>შემოწმება</span>
         </div>
       )}
     </div>
