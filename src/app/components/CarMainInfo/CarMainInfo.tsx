@@ -16,7 +16,7 @@ export const CarMainInfo = () => {
           <CalendarIcon />
         </div>
         <div>
-          <span>Year</span>
+          <span>წელი</span>
           <h4>{carInfo[0].ModelYear}</h4>
         </div>
       </div>
@@ -25,7 +25,7 @@ export const CarMainInfo = () => {
           <MakeIcon />
         </div>
         <div className={styles.informationCont}>
-          <span>Make</span>
+          <span>მწარმოებელი</span>
           <h4>{carInfo[0].Make}</h4>
         </div>
       </div>
@@ -34,7 +34,7 @@ export const CarMainInfo = () => {
           <ModelIcon />
         </div>
         <div>
-          <span>Model</span>
+          <span>მოდელი</span>
           <h4>{carInfo[0].Model}</h4>
         </div>
       </div>
@@ -43,7 +43,7 @@ export const CarMainInfo = () => {
           <EngineIcon />
         </div>
         <div>
-          <span>Engine</span>
+          <span>ძრავი</span>
           <h4>{engineSize.toFixed(1)}L</h4>
         </div>
       </div>

@@ -37,7 +37,7 @@ export const ReportOptions = () => {
         <AutoCheckIcon />
         <div className={styles.priceAndResult}>
           <div>
-            <h4>3₾</h4>
+            <h4>4.99₾</h4>
           </div>
           <input type="radio" checked={option === "autocheck"} readOnly />
         </div>
@@ -50,8 +50,8 @@ export const ReportOptions = () => {
         <div className={styles.priceAndResult}>
           <div>
             <h4>
-              <span className={styles.cancelledPrice}>13₾</span>
-              <span className={styles.salePrice}>10₾</span>
+              <span className={styles.cancelledPrice}>35₾</span>
+              <span className={styles.salePrice}>7.99₾</span>
             </h4>
           </div>
           <input type="radio" checked={option === "carfax"} readOnly />

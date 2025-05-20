@@ -25,7 +25,7 @@ export const VinReport = () => {
           <h3>
             Service Fee{" "}
             <span className={styles.finalPrice}>
-              {reportOption ? (reportOption === "carfax" ? 10 : 3) : 0}₾
+              {reportOption ? (reportOption === "carfax" ? '7.99' : '4.99') : 0}₾
             </span>
           </h3>
           <BuyReport/>
