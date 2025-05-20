@@ -52,12 +52,12 @@ export const BuyReport = () => {
       {loading ? (
         <div>
           <LoadingIcon />
-          <span>Loading...</span>
+          <span>იტვირთება...</span>
         </div>
       ) : (
         <div>
           <DocumentIcon />
-          <span>Buy your report</span>
+          <span>რეპორტის შეძენა</span>
         </div>
       )}
     </button>
