@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const initialState: string = '';
+const initialState: string = 'carfax';
 
 const reportOptionSlice = createSlice({
   name: "reportOption",
