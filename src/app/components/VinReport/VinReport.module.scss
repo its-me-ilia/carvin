@@ -47,6 +47,11 @@
   margin-top: 20px;
   gap: 10px;
   padding: 10px 0;
+
+  h4 {
+    padding: 0 14px;
+    text-align: center;
+  }
 }
 
 .buyReportCont h3 {
@@ -114,5 +119,12 @@
   .vinReport p {
     font-size: 15px;
     margin-bottom: 50px;
+  }
+}
+
+@media(max-width: 424px) {
+  .vinReport {
+    margin: 0;
+    width: fit-content;
   }
 }
