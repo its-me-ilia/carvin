@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import styles from "./Report.module.scss";
 import { GeorgiaIcon } from "@/app/icons/GeorgiaIcon";
 import { RussiaIcon } from "@/app/icons/RussiaIcon";
+
 import { UsaIcon } from "@/app/icons/UsaIcon";
 
 interface IReportProps {
