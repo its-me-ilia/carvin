@@ -17,7 +17,23 @@ declare global {
   }
 }
 
+const clearTranslateCookie = () => {
+  const domainParts = window.location.hostname.split(".");
+
+  // Try clearing on all domain scopes
+  for (let i = 0; i < domainParts.length - 1; i++) {
+    const domain = domainParts.slice(i).join(".");
+    document.cookie = `googtrans=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/; domain=${domain};`;
+  }
+
+  // Also clear without domain
+  document.cookie = `googtrans=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/;`;
+
+  window.location.reload();
+};
+
 const setTranslateCookie = (lang: string) => {
+  clearTranslateCookie();
   const domain = window.location.hostname.includes("localhost")
     ? ""
     : `; domain=${window.location.hostname}`;
@@ -25,7 +41,6 @@ const setTranslateCookie = (lang: string) => {
   document.cookie = `googtrans=/en/${lang}; path=/${domain}; SameSite=None; Secure`;
   window.location.reload();
 };
-
 
 export const Report: React.FC<IReportProps> = ({ report }) => {
   const [scriptLoaded, setScriptLoaded] = useState(false);
@@ -64,17 +79,17 @@ export const Report: React.FC<IReportProps> = ({ report }) => {
   }, []);
 
   const translateToGeorgian = () => {
-    setTranslateCookie('ka');
+    setTranslateCookie("ka");
     window.location.reload();
   };
 
   const translateToRussian = () => {
-    setTranslateCookie('ru');
+    setTranslateCookie("ru");
     window.location.reload();
   };
 
   const resetTranslation = () => {
-    setTranslateCookie('en');
+    setTranslateCookie("en");
     window.location.reload();
   };
 
