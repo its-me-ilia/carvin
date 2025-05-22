@@ -16,6 +16,16 @@ declare global {
   }
 }
 
+const setTranslateCookie = (lang: string) => {
+  const domain = window.location.hostname.includes("localhost")
+    ? ""
+    : `; domain=${window.location.hostname}`;
+
+  document.cookie = `googtrans=/en/${lang}; path=/${domain}; SameSite=None; Secure`;
+  window.location.reload();
+};
+
+
 export const Report: React.FC<IReportProps> = ({ report }) => {
   const [scriptLoaded, setScriptLoaded] = useState(false);
   const [currentLang, setCurrentLang] = useState("en");
@@ -53,17 +63,17 @@ export const Report: React.FC<IReportProps> = ({ report }) => {
   }, []);
 
   const translateToGeorgian = () => {
-    document.cookie = "googtrans=/en/ka; path=/";
+    setTranslateCookie('ka');
     window.location.reload();
   };
 
   const translateToRussian = () => {
-    document.cookie = "googtrans=/en/ru; path=/";
+    setTranslateCookie('ru');
     window.location.reload();
   };
 
   const resetTranslation = () => {
-    document.cookie = "googtrans=/en/en; path=/";
+    setTranslateCookie('en');
     window.location.reload();
   };
 
