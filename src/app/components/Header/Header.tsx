@@ -10,7 +10,6 @@ export const Header = () => {
         <h1 className={styles.title}>
           <Link href={"/"}>
             <CarIcon />
-            <span>VinAuto</span>
           </Link>
         </h1>
         <Link href={"/contactUs"}>
