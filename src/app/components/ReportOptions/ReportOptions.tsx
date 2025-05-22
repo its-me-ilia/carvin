@@ -8,7 +8,7 @@ import { handleReportOption } from "@/app/redux/slices/reportOptionSice/reportOp
 import { useRouter } from "next/navigation";
 
 export const ReportOptions = () => {
-  const [option, setOption] = useState("");
+  const [option, setOption] = useState("carfax");
   const dispatch = useDispatch();
   const router = useRouter();
 
