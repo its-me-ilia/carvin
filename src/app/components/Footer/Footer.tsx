@@ -17,13 +17,17 @@ export const Footer = () => {
             <span>•</span>
             <Link href={"/terms"}>წესები და პირობები</Link>
           </div>
-          <div>
-            <Link href={"/"}>info@vinauto.ge</Link>
-            <span>•</span>
-            <Link href={"/"}>+995 551 123 456</Link>
+          <div className="flex items-center space-x-2 text-sm text-gray-600">
+            <Link href="mailto:info@vinauto.ge" className="hover:underline">
+              info@vinauto.ge
+            </Link>
+            <span aria-hidden="true">•</span>
+            <Link href="tel:+995551094335" className="hover:underline">
+              +995 551 094 335
+            </Link>
           </div>
           <div>
-            <p>გორი, რუსთაველის ქუჩა, 49.</p>
+            <p>თბილისი, მ. წინამძღვრიშვილის 112</p>
           </div>
         </div>
       </div>
