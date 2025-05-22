@@ -1,6 +1,6 @@
-import { GeorgiaIcon } from "@/app/icons/GeorgiaIcon";
 import React, { useEffect, useState } from "react";
 import styles from "./Report.module.scss";
+import { GeorgiaIcon } from "@/app/icons/GeorgiaIcon";
 import { RussiaIcon } from "@/app/icons/RussiaIcon";
 import { UsaIcon } from "@/app/icons/UsaIcon";
 
@@ -18,8 +18,17 @@ declare global {
 
 export const Report: React.FC<IReportProps> = ({ report }) => {
   const [scriptLoaded, setScriptLoaded] = useState(false);
+  const [currentLang, setCurrentLang] = useState("en");
+
+  // Helper to get current language from cookie
+  const getCurrentLang = (): string => {
+    const match = document.cookie.match(/googtrans=\/en\/(\w{2})/);
+    return match ? match[1] : "en";
+  };
 
   useEffect(() => {
+    setCurrentLang(getCurrentLang());
+
     if (!window.google) {
       window.googleTranslateElementInit = () => {
         new window.google.translate.TranslateElement(
@@ -39,22 +48,17 @@ export const Report: React.FC<IReportProps> = ({ report }) => {
       script.async = true;
       document.body.appendChild(script);
     } else {
-      // Google script already loaded, just set flag
       setScriptLoaded(true);
     }
   }, []);
 
   const translateToGeorgian = () => {
-    // Set googtrans cookie to trigger translation
     document.cookie = "googtrans=/en/ka; path=/";
-    // Reload page so Google Translate picks up the cookie
     window.location.reload();
   };
 
   const translateToRussian = () => {
-    // Set googtrans cookie to trigger translation
     document.cookie = "googtrans=/en/ru; path=/";
-    // Reload page so Google Translate picks up the cookie
     window.location.reload();
   };
 
@@ -67,18 +71,29 @@ export const Report: React.FC<IReportProps> = ({ report }) => {
     <div>
       <div id="google_translate_element" style={{ display: "none" }}></div>
 
-      {scriptLoaded && report ? <div className={styles.languageSwitcherContainer} id="gela">
-        <h3>აირჩიეთ ენა:</h3>
-        <button onClick={translateToGeorgian}>
-          <GeorgiaIcon />
-        </button>
-        <button onClick={translateToRussian}>
-          <RussiaIcon />
-        </button>
-        <button onClick={resetTranslation}>
-          <UsaIcon />
-        </button>
-      </div> : null}
+      {scriptLoaded && report ? (
+        <div className={styles.languageSwitcherContainer} id="gela">
+          <h3>ენა:</h3>
+
+          {currentLang !== "ka" && (
+            <button onClick={translateToGeorgian}>
+              <GeorgiaIcon />
+            </button>
+          )}
+
+          {currentLang !== "ru" && (
+            <button onClick={translateToRussian}>
+              <RussiaIcon />
+            </button>
+          )}
+
+          {currentLang !== "en" && (
+            <button onClick={resetTranslation}>
+              <UsaIcon />
+            </button>
+          )}
+        </div>
+      ) : null}
 
       <div
         style={{ background: "linear-gradient(#fff, #fff)" }}
