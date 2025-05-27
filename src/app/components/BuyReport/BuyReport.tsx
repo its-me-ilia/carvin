@@ -41,6 +41,7 @@ export const BuyReport = () => {
 
   useEffect(() => {
     if (redirectUrl) {
+      setLoading(false)
       window.location.href = `${redirectUrl}`;
     }
   }, [redirectUrl]);
