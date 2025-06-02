@@ -10,7 +10,7 @@ import { useState } from "react";
 
 export const CheckCar = () => {
   const dispatch = useDispatch();
-  const [guideActive, setGuideActive] = useState(true);
+  const [guideActive, setGuideActive] = useState(false);
   const vin = useSelector((state: RootState) => state.vin);
   return (
     <div className={styles.mainCont}>
