@@ -72,6 +72,7 @@
 .dottedText {
   color: $whiteTextColor;
   text-decoration: underline dotted;
+  cursor: pointer;
 }
 
 @media screen and (max-width: 768px) {
