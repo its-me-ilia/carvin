@@ -8,6 +8,7 @@ const carInfoSlice = createSlice({
   initialState,
   reducers: {
     handleCarInfo: (state, action) => {
+      console.log(action.payload);
       return action.payload;
     },
   },

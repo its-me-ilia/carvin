@@ -8,7 +8,10 @@ import { RootState } from "@/app/redux/store";
 
 export const CarMainInfo = () => {
   const carInfo = useSelector((state: RootState) => state.carInfo);
-  const engineSize = (+carInfo[0].DisplacementL)
+  const engineSize = carInfo[0].DisplacementL;
+
+  const formattedEngineSize = Number(engineSize) > 0 ? Number(engineSize).toFixed(1) : engineSize
+  console.log(engineSize);
   return (
     <div className={styles.carInfoCont}>
       <div>
@@ -44,7 +47,7 @@ export const CarMainInfo = () => {
         </div>
         <div>
           <span>ძრავი</span>
-          <h4>{engineSize.toFixed(1)}L</h4>
+          <h4>{formattedEngineSize}</h4>
         </div>
       </div>
     </div>
