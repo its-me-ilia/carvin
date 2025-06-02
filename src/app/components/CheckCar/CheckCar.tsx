@@ -5,12 +5,16 @@ import { useDispatch, useSelector } from "react-redux";
 import { handleVin } from "@/app/redux/slices/vinSlice/vinSlice";
 import { RootState } from "@/app/redux/store";
 import { CheckButton } from "../CheckButton/CheckButton";
+import { Guide } from "../Guide/Guide";
+import { useState } from "react";
 
 export const CheckCar = () => {
   const dispatch = useDispatch();
+  const [guideActive, setGuideActive] = useState(true);
   const vin = useSelector((state: RootState) => state.vin);
   return (
     <div className={styles.mainCont}>
+      <Guide isActive={guideActive} handleClose={() => setGuideActive(false)} />
       <div className={styles.inputCont}>
         <input
           value={vin}
@@ -27,7 +31,12 @@ export const CheckCar = () => {
         </p>
         <p>
           <PlayIcon />
-          <span className={styles.dottedText}>როგორ შევამოწმო?</span>
+          <span
+            className={styles.dottedText}
+            onClick={() => setGuideActive(true)}
+          >
+            როგორ შევამოწმო?
+          </span>
         </p>
       </div>
     </div>

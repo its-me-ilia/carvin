@@ -1,0 +1,30 @@
+.guideWrapper {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  z-index: 8888;
+  background-color: rgba(0, 0, 0, 0.8);
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  video {
+    max-width: 90%;
+  }
+
+  .closeGuide {
+    cursor: pointer;
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    height: 50px;
+    width: 50px;
+
+    svg {
+      height: 100%;
+      width: 100%;
+    }
+  }
+}
