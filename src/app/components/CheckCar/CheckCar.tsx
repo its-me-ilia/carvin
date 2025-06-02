@@ -1,18 +1,21 @@
 "use client";
 import styles from "./CheckCar.module.scss";
 import { PlayIcon } from "../../icons/PlayIcon";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { handleVin } from "@/app/redux/slices/vinSlice/vinSlice";
+import { RootState } from "@/app/redux/store";
 import { CheckButton } from "../CheckButton/CheckButton";
 
 export const CheckCar = () => {
   const dispatch = useDispatch();
+  const vin = useSelector((state: RootState) => state.vin);
   return (
     <div className={styles.mainCont}>
       <div className={styles.inputCont}>
         <input
+          value={vin}
           type="text"
-          onChange={(e) => dispatch(handleVin(e.target.value))}
+          onChange={(e) => dispatch(handleVin(e.target.value.toUpperCase()))}
           placeholder="ჩაწერეთ VIN კოდი"
         />
         <CheckButton />
