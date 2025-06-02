@@ -29,14 +29,9 @@ export const CheckCar = () => {
           <span className={styles.underlinedText}></span>
           <span className={styles.grayText}></span>
         </p>
-        <p>
+        <p onClick={() => setGuideActive(true)} className={styles.pointer}>
           <PlayIcon />
-          <span
-            className={styles.dottedText}
-            onClick={() => setGuideActive(true)}
-          >
-            როგორ შევამოწმო?
-          </span>
+          <span className={styles.dottedText}>როგორ შევამოწმო?</span>
         </p>
       </div>
     </div>
