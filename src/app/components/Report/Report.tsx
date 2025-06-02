@@ -4,6 +4,7 @@ import { GeorgiaIcon } from "@/app/icons/GeorgiaIcon";
 import { RussiaIcon } from "@/app/icons/RussiaIcon";
 
 import { UsaIcon } from "@/app/icons/UsaIcon";
+import { PrintButton } from "../Print/Print";
 
 interface IReportProps {
   report: string;
@@ -96,7 +97,7 @@ export const Report: React.FC<IReportProps> = ({ report }) => {
   return (
     <div>
       <div id="google_translate_element" style={{ display: "none" }}></div>
-
+      <PrintButton />
       {scriptLoaded && report ? (
         <div className={styles.languageSwitcherContainer} id="gela">
           <h3>ენა:</h3>

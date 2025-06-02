@@ -1,0 +1,19 @@
+.printButton {
+  position: fixed;
+  bottom: 15px;
+  right: 15px;
+  height: 50px;
+  width: 50px;
+  border-radius: 100px;
+  background-color: #1875d2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  z-index: 999999;
+
+  svg {
+    height: 50%;
+    width: 50%;
+  }
+}
