@@ -6,12 +6,19 @@ import { handleVin } from "@/app/redux/slices/vinSlice/vinSlice";
 import { RootState } from "@/app/redux/store";
 import { CheckButton } from "../CheckButton/CheckButton";
 import { Guide } from "../Guide/Guide";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { handleReportOption } from "@/app/redux/slices/reportOptionSice/reportOption";
 
 export const CheckCar = () => {
   const dispatch = useDispatch();
   const [guideActive, setGuideActive] = useState(false);
   const vin = useSelector((state: RootState) => state.vin);
+
+  useEffect(() => {
+    dispatch(handleVin(''));
+    dispatch(handleReportOption("carfax"));
+  }, [])
+
   return (
     <div className={styles.mainCont}>
       <Guide isActive={guideActive} handleClose={() => setGuideActive(false)} />
