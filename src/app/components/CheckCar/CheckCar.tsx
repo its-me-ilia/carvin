@@ -12,29 +12,42 @@ import { handleReportOption } from "@/app/redux/slices/reportOptionSice/reportOp
 export const CheckCar = () => {
   const dispatch = useDispatch();
   const [guideActive, setGuideActive] = useState(false);
+  const [vinError, setVinError] = useState(false);
   const vin = useSelector((state: RootState) => state.vin);
 
   useEffect(() => {
-    dispatch(handleVin(''));
+    dispatch(handleVin(""));
     dispatch(handleReportOption("carfax"));
-  }, [])
+  }, []);
+
+  const handleVinValue = (value: string) => {
+    dispatch(handleVin(value.toUpperCase()));
+    if (vinError) {
+      setVinError((prev) => !prev);
+    }
+  };
 
   return (
     <div className={styles.mainCont}>
       <Guide isActive={guideActive} handleClose={() => setGuideActive(false)} />
-      <div className={styles.inputCont}>
+      <div
+        className={styles.inputCont}
+        style={{
+          border: `${vinError ? "1.5px solid #D50000" : "1.5px solid #fff"}`,
+        }}
+      >
         <input
+          className={vinError ? styles.erroredInput : ''}
           value={vin}
           type="text"
-          onChange={(e) => dispatch(handleVin(e.target.value.toUpperCase()))}
+          onChange={(e) => handleVinValue(e.target.value)}
           placeholder="ჩაწერეთ VIN კოდი"
         />
-        <CheckButton />
+        <CheckButton setVinError={setVinError} />
       </div>
       <div className={styles.helpCont}>
-        <p>
-          <span className={styles.underlinedText}></span>
-          <span className={styles.grayText}></span>
+        <p className={styles.errorMessage}>
+          {vinError && <span>VIN კოდი არასწორია</span>}
         </p>
         <p onClick={() => setGuideActive(true)} className={styles.pointer}>
           <PlayIcon />

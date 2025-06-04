@@ -7,7 +7,11 @@ import { RootState } from "@/app/redux/store";
 import axios from "axios";
 import { handleCarInfo } from "@/app/redux/slices/carInfoSlice/carInfoSlice";
 
-export const CheckButton = () => {
+interface ICheckButton {
+  setVinError:  React.Dispatch<React.SetStateAction<boolean>>
+}
+
+export const CheckButton: React.FC<ICheckButton> = ({ setVinError }) => {
   const [loading, setLoading] = useState(false);
   const vin = useSelector((state: RootState) => state.vin);
   const dispatch = useDispatch();
@@ -21,9 +25,12 @@ export const CheckButton = () => {
         `https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValuesExtended/${vin}?format=json`
       );
 
-      if (nhtsaRes?.data?.Results?.length) {
-        dispatch(handleCarInfo(nhtsaRes.data.Results));
+      if (nhtsaRes?.data?.Results?.length && nhtsaRes.data.Results[0].ErrorCode === '0') {
+        dispatch(handleCarInfo(nhtsaRes.data.Results));        
         return;
+      } else {
+        setVinError(true)
+        setLoading(false)
       }
     } catch (error) {
       console.error(error);
@@ -42,7 +49,7 @@ export const CheckButton = () => {
 
 
       const spec = fallbackRes?.data;
-      if (spec) {
+      if (spec && spec.Status !== 'FAILED') {
         console.log(spec)
         dispatch(
           handleCarInfo([
@@ -61,7 +68,7 @@ export const CheckButton = () => {
     } finally {
       setLoading(false);
     }
-  }, [vin, loading, dispatch]);
+  }, [vin, loading, dispatch, setVinError]);
 
   const handleKeyDown = useCallback(
     (e: KeyboardEvent) => {

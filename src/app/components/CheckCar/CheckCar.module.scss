@@ -14,6 +14,7 @@
   align-items: center;
   justify-content: space-between;
   padding: 0 10px;
+  border: 9px solid $whiteTextColor;
 }
 
 .inputCont input {
@@ -22,6 +23,11 @@
   outline: none;
   font-size: 16px;
   width: 70%;
+  color: $inputColor;
+}
+
+.errorMessage, .erroredInput {
+  color: $warningColor !important;
 }
 
 .inputCont div {
