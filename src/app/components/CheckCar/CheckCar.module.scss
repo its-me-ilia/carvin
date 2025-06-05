@@ -71,10 +71,6 @@
   text-decoration: underline;
 }
 
-.grayText {
-  color: $grayTextColor;
-}
-
 .dottedText {
   color: $whiteTextColor;
   text-decoration: underline dotted;
@@ -82,6 +78,17 @@
 
 .pointer {
   cursor: pointer;
+}
+
+@media screen and (max-width: 518px) {
+  .helpCont p {
+    font-size: 14px;
+  }
+
+  .inputCont div {
+    width: 120px;
+    gap: 6px;
+  }
 }
 
 @media screen and (max-width: 768px) {
