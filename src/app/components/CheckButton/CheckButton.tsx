@@ -90,17 +90,19 @@ export const CheckButton: React.FC<ICheckButton> = ({ setVinError }) => {
     }
   };
 
+  const isMobile = typeof window !== 'undefined' ? window.innerWidth <= 518 : false;
+
   return (
     <div>
       {loading ? (
         <div className={styles.loading}>
           <LoadingIcon />
-          <span>იტვირთება...</span>
+          {!isMobile && <span>იტვირთება...</span>}
         </div>
       ) : (
         <div className={styles.loading} onClick={handleClick}>
           <SearchIcon />
-          <span>შემოწმება</span>
+          {!isMobile && <span>შემოწმება</span>}
         </div>
       )}
     </div>

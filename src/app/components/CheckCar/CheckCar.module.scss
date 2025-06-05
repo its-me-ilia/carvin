@@ -30,9 +30,13 @@
   color: $warningColor !important;
 }
 
+.errorMessage {
+  white-space: nowrap;
+}
+
 .inputCont div {
   height: 42px;
-  width: 140px;
+  width: 160px;
   font-size: 16px;
   font-weight: 400;
   line-height: 20px;
@@ -57,7 +61,7 @@
   width: 100%;
   display: flex;
   justify-content: space-between;
-  margin-top: 14px;
+  margin-top: 8px;
 }
 
 .helpCont p {
@@ -74,6 +78,7 @@
 .dottedText {
   color: $whiteTextColor;
   text-decoration: underline dotted;
+  white-space: nowrap;
 }
 
 .pointer {
@@ -86,7 +91,7 @@
   }
 
   .inputCont div {
-    width: 120px;
+    width: 40px;
     gap: 6px;
   }
 }
