@@ -3,7 +3,7 @@ import styles from "./CheckCar.module.scss";
 import { PlayIcon } from "../../icons/PlayIcon";
 import { CheckButton } from "../CheckButton/CheckButton";
 import { Guide } from "../Guide/Guide";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 interface ICheckCarProps {
   vin: string;
@@ -30,6 +30,10 @@ export const CheckCar: React.FC<ICheckCarProps> = ({
       setVinError((prev: boolean) => !prev);
     }
   };
+
+  useEffect(() => {
+    setVin('');
+  }, [setVin])
 
   return (
     <div className={styles.mainCont}>
