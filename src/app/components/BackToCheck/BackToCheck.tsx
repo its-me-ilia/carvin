@@ -1,14 +1,15 @@
 "use client";
 import { ArrowIcon } from "@/app/icons/ArrowIcon";
 import styles from "./BackToCheck.module.scss";
-import { useDispatch } from "react-redux";
-import { handleCarInfo } from "@/app/redux/slices/carInfoSlice/carInfoSlice";
+import { ICarInfo } from "@/app/types";
 
-export const BackToCheck = () => {
-  const dispatch = useDispatch();
+interface IBackToCheckProps {
+  setCarInfo: React.Dispatch<React.SetStateAction<ICarInfo[]>>
+}
 
+export const BackToCheck: React.FC<IBackToCheckProps> = ({ setCarInfo }) => {
   const backToCheck = () => {
-    dispatch(handleCarInfo([]));
+    setCarInfo([]);
   };
 
   return (

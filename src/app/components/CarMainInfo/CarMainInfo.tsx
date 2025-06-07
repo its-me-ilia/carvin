@@ -3,11 +3,13 @@ import styles from "./CarMainInfo.module.scss";
 import { MakeIcon } from "@/app/icons/MakeIcon";
 import { ModelIcon } from "@/app/icons/ModelIcon";
 import { EngineIcon } from "@/app/icons/EngineIcon";
-import { useSelector } from "react-redux";
-import { RootState } from "@/app/redux/store";
+import { ICarInfo } from "@/app/types";
 
-export const CarMainInfo = () => {
-  const carInfo = useSelector((state: RootState) => state.carInfo);
+interface ICarMainInfoProps {
+  carInfo: ICarInfo[]
+}
+
+export const CarMainInfo: React.FC<ICarMainInfoProps> = ({ carInfo }) => {
   const engineSize = carInfo[0].DisplacementL;
 
   const formattedEngineSize = Number(engineSize) > 0 ? Number(engineSize).toFixed(1) : engineSize

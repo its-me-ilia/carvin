@@ -1,29 +1,33 @@
 "use client";
 import styles from "./CheckCar.module.scss";
 import { PlayIcon } from "../../icons/PlayIcon";
-import { useDispatch, useSelector } from "react-redux";
-import { handleVin } from "@/app/redux/slices/vinSlice/vinSlice";
-import { RootState } from "@/app/redux/store";
 import { CheckButton } from "../CheckButton/CheckButton";
 import { Guide } from "../Guide/Guide";
-import { useEffect, useState } from "react";
-import { handleReportOption } from "@/app/redux/slices/reportOptionSice/reportOption";
+import { useState } from "react";
 
-export const CheckCar = () => {
-  const dispatch = useDispatch();
+interface ICheckCarProps {
+  vin: string;
+  setVin: React.Dispatch<React.SetStateAction<string>>;
+  loading: boolean;
+  handleClick: () => void;
+  vinError: boolean;
+  setVinError: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+export const CheckCar: React.FC<ICheckCarProps> = ({
+  vin,
+  setVin,
+  handleClick,
+  loading,
+  vinError,
+  setVinError,
+}) => {
   const [guideActive, setGuideActive] = useState(false);
-  const [vinError, setVinError] = useState(false);
-  const vin = useSelector((state: RootState) => state.vin);
-
-  useEffect(() => {
-    dispatch(handleVin(""));
-    dispatch(handleReportOption("carfax"));
-  }, []);
 
   const handleVinValue = (value: string) => {
-    dispatch(handleVin(value.toUpperCase()));
+    setVin(value.toUpperCase());
     if (vinError) {
-      setVinError((prev) => !prev);
+      setVinError((prev: boolean) => !prev);
     }
   };
 
@@ -37,13 +41,13 @@ export const CheckCar = () => {
         }}
       >
         <input
-          className={vinError ? styles.erroredInput : ''}
+          className={vinError ? styles.erroredInput : ""}
           value={vin}
           type="text"
           onChange={(e) => handleVinValue(e.target.value)}
           placeholder="ჩაწერეთ VIN კოდი"
         />
-        <CheckButton setVinError={setVinError} />
+        <CheckButton loading={loading} handleClick={handleClick} />
       </div>
       <div className={styles.helpCont}>
         <p className={styles.errorMessage}>

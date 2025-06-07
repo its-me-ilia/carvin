@@ -1,27 +1,29 @@
 "use client";
 import styles from "./ReportOptions.module.scss";
 import { AutoCheckIcon } from "@/app/icons/AutoCheckIcon";
-import { RootState } from "@/app/redux/store";
 import { CarFaxIcon } from "@/app/icons/CarFaxIcon";
-import { useDispatch, useSelector } from "react-redux";
-import { handleReportOption } from "@/app/redux/slices/reportOptionSice/reportOption";
 
-export const ReportOptions = () => {
-  const option = useSelector((state: RootState) => state.reportOption);
-  const dispatch = useDispatch();
+interface IReportOptionsProps {
+  reportOption: string;
+  setReportOption: React.Dispatch<React.SetStateAction<string>>;
+}
 
+export const ReportOptions: React.FC<IReportOptionsProps> = ({
+  reportOption,
+  setReportOption,
+}) => {
   const handleOption = (optionName: string) => {
-    if (option === optionName) {
-      dispatch(handleReportOption(""));
+    if (reportOption === optionName) {
+      setReportOption("");
     } else {
-      dispatch(handleReportOption(optionName));
+      setReportOption(optionName);
     }
   };
 
   return (
     <div className={styles.optionsCont}>
       <div
-        className={option === "autocheck" ? styles.active : ""}
+        className={reportOption === "autocheck" ? styles.active : ""}
         onClick={() => handleOption("autocheck")}
       >
         <AutoCheckIcon />
@@ -29,11 +31,11 @@ export const ReportOptions = () => {
           <div>
             <h4>4.99₾</h4>
           </div>
-          <input type="radio" checked={option === "autocheck"} readOnly />
+          <input type="radio" checked={reportOption === "autocheck"} readOnly />
         </div>
       </div>
       <div
-        className={option === "carfax" ? styles.active : ""}
+        className={reportOption === "carfax" ? styles.active : ""}
         onClick={() => handleOption("carfax")}
       >
         <CarFaxIcon />
@@ -44,7 +46,7 @@ export const ReportOptions = () => {
               <span className={styles.salePrice}>7.99₾</span>
             </h4>
           </div>
-          <input type="radio" checked={option === "carfax"} readOnly />
+          <input type="radio" checked={reportOption === "carfax"} readOnly />
         </div>
       </div>
     </div>

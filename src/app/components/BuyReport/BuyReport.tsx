@@ -1,17 +1,18 @@
 import { DocumentIcon } from "@/app/icons/DocumentIcon";
 import { LoadingIcon } from "@/app/icons/LoadingIcon";
-import { RootState } from "@/app/redux/store";
 import axios from "axios";
 import { useCallback, useEffect, useState } from "react";
-import { useSelector } from "react-redux";
 import styles from "./BuyReport.module.scss";
 
-export const BuyReport = () => {
+interface IBuyReportProps {
+  vin: string
+  reportOption: string
+}
+
+export const BuyReport: React.FC<IBuyReportProps> = ({ vin, reportOption }) => {
   const [id, setId] = useState("");
   const [redirectUrl, setRedirectUrl] = useState('')
   const [loading, setLoading] = useState(false);
-  const vin = useSelector((state: RootState) => state.vin);
-  const reportOption = useSelector((state: RootState) => state.reportOption);
 
   const idRequest = useCallback(async () => {
     setLoading(true);

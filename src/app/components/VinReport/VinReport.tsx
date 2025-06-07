@@ -2,26 +2,30 @@
 import styles from "./VinReport.module.scss";
 import { CarMainInfo } from "../CarMainInfo/CarMainInfo";
 import { ReportOptions } from "../ReportOptions/ReportOptions";
-import { useSelector } from "react-redux";
-import { RootState } from "@/app/redux/store";
 import { BackToCheck } from "../BackToCheck/BackToCheck";
 import { BuyReport } from "../BuyReport/BuyReport";
 import Link from "next/link";
+import { ICarInfo } from "@/app/types";
+import { useState } from "react";
 
-export const VinReport = () => {
-  const reportOption = useSelector((state: RootState) => state.reportOption);
-  const carInfo = useSelector((state: RootState) => state.carInfo);  
+interface IVinReport {
+  vin: string
+  carInfo: ICarInfo[]
+  setCarInfo: React.Dispatch<React.SetStateAction<ICarInfo[]>>
+}
 
+export const VinReport: React.FC<IVinReport> = ({ vin, carInfo, setCarInfo }) => {
+  const [reportOption, setReportOption] = useState('carfax')
   return (
     <div className={styles.vinReport}>
       <div>
-        <BackToCheck />
+        <BackToCheck setCarInfo={setCarInfo}/>
         <h1>აირჩიეთ სასურველი რეპორტი</h1>
         <p>მიიღება ყველა სახის საბანკო ბარათი</p>
-        <h3 className={styles.vin}>VIN: {carInfo[0].VIN.toUpperCase()}</h3>
-        <CarMainInfo />
+        <h3 className={styles.vin}>VIN: {vin}</h3>
+        <CarMainInfo carInfo={carInfo}/>
         <div className={styles.hr}></div>
-        <ReportOptions />
+        <ReportOptions reportOption={reportOption} setReportOption={setReportOption}/>
         <div className={styles.buyReportCont}>
           <h3>
             რეპორტის ფასი:{" "}
@@ -29,7 +33,7 @@ export const VinReport = () => {
               {reportOption ? (reportOption === "carfax" ? '7.99' : '4.99') : 0}₾
             </span>
           </h3>
-          <BuyReport/>
+          <BuyReport reportOption={reportOption} vin={vin}/>
           <h4>გაგრძელებით ეთანხმებით <Link href={'terms'}>წესებსა და პირობებს</Link></h4>
         </div>
       </div>
