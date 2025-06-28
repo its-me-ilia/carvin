@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<svg fill="currentColor" height="24" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+  <g>
+    <path fill="#5796D0" d="M15 14a5 5 0 1 0 0-10 5 5 0 0 0 0 10"/>
+  </g>
+  <g>
+    <path fill="#616161" d="M15 14a5 5 0 1 0 0-10 5 5 0 0 0 0 10m0-12a7 7 0 1 1 0 14 7 7 0 0 1 0-14"/>
+  </g>
+  <g>
+    <path fill="#E37300" d="m2 20 2 2 6-6v-1.29l.42-.42c-.26-.22-.49-.45-.71-.71l-.42.42H8l-6 6Z"/>
+  </g>
+</svg>

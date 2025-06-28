@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<svg fill="currentColor" height="24" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+  <g>
+    <path fill="#5796D0" d="M6 3v3.492L2.992 8.246A2.008 2.008 0 0 0 2 9.975V20c0 1.103.897 2 2 2h16c1.103 0 2-.897 2-2V9.975c0-.709-.38-1.372-.992-1.729L18 6.492V3H6Zm2 2h8v7.334l-4 2.488-4-2.49V5ZM6 8.807v2.281L4.107 9.91 6 8.807Zm12 .002 1.893 1.103L18 11.09V8.809Z"/>
+  </g>
+</svg>

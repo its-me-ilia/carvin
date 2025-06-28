@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<svg fill="currentColor" height="24" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+  <g>
+    <path fill="#2E7D32" fill-rule="nonzero" d="M3 3a1 1 0 0 0-1 1v7a2 2 0 0 0 2 2V5h16v8a2 2 0 0 0 2-2V4a1 1 0 0 0-1-1H3Zm3.998 4a1 1 0 0 0-.986.836L5.318 12H3v8a1 1 0 0 0 1 1h3l.668-2h8.666L17 21h3a1 1 0 0 0 1-1v-8h-2.32l-.694-4.164A1 1 0 0 0 16.998 7h-10ZM6.5 14c.83 0 1.5.67 1.5 1.5S7.33 17 6.5 17 5 16.33 5 15.5 5.67 14 6.5 14Zm11 0c.83 0 1.5.67 1.5 1.5s-.67 1.5-1.5 1.5-1.5-.67-1.5-1.5.67-1.5 1.5-1.5Zm-1.348-5 .5 3H7.346l.5-3h8.306Z"/>
+  </g>
+</svg>

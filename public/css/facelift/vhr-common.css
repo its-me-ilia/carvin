@@ -1,0 +1,552 @@
+.detailLineBreak {
+    clear: both;
+}
+
+.open-cip-menu, .close-cip-menu {
+    display:none;
+}
+
+/*** Point of Impact ***/
+.poi, .poi div {
+    color: #424242;
+}
+
+.poi div {
+    text-align: center;
+}
+
+.poi > div {
+    font-size: 10px;
+}
+
+.poi .outer {
+    background: unset !important;
+    overflow: hidden;
+    border: 1px solid #212121;
+    display: inline-block;
+    vertical-align: middle;
+    margin: 3px;
+    position: relative;
+    top: 0;
+    right: 0;
+    z-index: 0;
+
+}
+
+.poi .outer::after {
+    content: url("https://media.carfax.com/img/vhr/poi/poi-crosshatch-background-wider.svg");
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -2;
+    width: 101%;
+}
+
+.poi .inner {
+    margin: 11px 12px 12px 12px;
+}
+
+.poi .inner div:first-child {
+    z-index: 2;
+    position: relative;
+    border: 1px solid #212121;
+    box-sizing: border-box;
+}
+
+.poi .outer div:not(:first-child) {
+    background-color: white;
+    position: absolute;
+    z-index: 1;
+}
+
+.poi .outer .top-left {
+    width: 34%;
+    height: 34%;
+    top: 0;
+    left: 0;
+}
+
+.poi .outer .top-center {
+    width: 34%;
+    height: 50%;
+    top: 0;
+    left: 33%;
+}
+
+.poi .outer .top-right {
+    width: 34%;
+    height: 34%;
+    top: 0;
+    right: 0;
+}
+
+.poi .outer .left-center {
+    width: 50%;
+    height: 34%;
+    top: 33%;
+    left: 0;
+}
+
+.poi .outer .right-center {
+    width: 50%;
+    height: 34%;
+    top: 33%;
+    right: 0;
+}
+
+.poi .outer .bottom-left {
+    width: 34%;
+    height: 34%;
+    bottom: 0;
+    left: 0;
+}
+
+.poi .outer .bottom-center {
+    width: 34%;
+    height: 50%;
+    bottom: 0;
+    left: 33%;
+}
+
+.poi .outer .bottom-right {
+    width: 34%;
+    height: 34%;
+    bottom: 0;
+    right: 0;
+}
+
+.poi.leftfront .outer .top-left, .poi.front .outer .top-center,
+.poi.rightfront .outer .top-right {
+    background: #fff;
+    display: none;
+    top: -.2px;
+}
+
+.poi.leftside .outer .left-center, .poi.rightside .outer .right-center {
+    background: #fff;
+    display: none;
+}
+
+.poi.leftrear .outer .bottom-left, .poi.rear .outer .bottom-center, .poi.rightrear .outer .bottom-right {
+    background: #fff;
+    display: none;
+    bottom: -.2px;
+}
+
+.dmg-title {
+    letter-spacing: -0.24px;
+    text-align: center;
+    margin-top: 10px;
+    line-height: 1.7;
+}
+
+.car-container {
+    background-color: #fffbe8 !important;
+    padding: 10px !important;
+}
+
+.poi-pixel {
+    height: 100%;
+    width: 100%;
+}
+
+.image-container {
+    display: flex;
+}
+
+.poi-row{
+    display:block;
+    min-width: 482px;
+}
+
+.poi-right-column{
+    display:inline-flex;
+    vertical-align: top;
+    flex-direction:column;
+    width: 44%;
+    margin-right: 5px;
+    margin-bottom: 8px;
+}
+
+.poi-fox-box {
+    width: 54%;
+    display: inline-flex;
+    justify-content: flex-end;
+}
+
+.poi-yellow-fill-container {
+    position: relative;
+    z-index: 0;
+    bottom: 0;
+    width: 278px;
+    margin-left: 10px;
+    border: 1px solid #E0E0E0;
+    border-radius:3px;
+}
+
+.poi-container {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    width: 278px;
+    display: block;
+    background-color: unset;
+    border: none;
+    max-height: none;
+}
+
+.yellow-fill {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    top: 0;
+    border-radius: 3px;
+}
+
+.standard-fox {
+    position: relative;
+    right: 15px;
+    position: relative;
+    top: 83px;
+    height: 304px;
+}
+
+.poi-iso-fox {
+    position: relative;
+    right: 15px;
+    height: 292px;
+}
+
+.poi-iso-fox.truck {
+    top: 27px;
+}
+
+.poi-iso-fox.suv {
+    top: 26px;
+}
+
+.poi-iso-fox.car {
+    top: 11px;
+}
+
+.poi-iso-fox.van {
+    top: 26px;
+}
+
+.smallest-fox {
+    margin-right: -352px;
+    margin-bottom: -16px;
+    position: relative;
+    top: 15px;
+    height: 100px;
+    z-index: 2;
+}
+
+.spacer-div {
+    min-height: 10px;
+}
+
+.pad-for-smashed {
+    padding-left: 90px;
+}
+
+.car-height {
+    height: 275px;
+}
+
+.truck-height {
+    height: 293px;
+}
+
+.van-height {
+    height: 290px;
+}
+
+.suv-height {
+    height: 292px;
+}
+
+.car-roof-height {
+    height: 275px;
+}
+
+.truck-roof-height {
+    height: 293px;
+}
+
+.van-roof-height {
+    height: 290px;
+}
+
+.suv-roof-height {
+    height: 292px;
+}
+
+/*** Ratings and Reviews ***/
+.ratings-container {
+    display: flex;
+    align-items: center;
+    word-break: normal;
+}
+
+.ratings-stars-container {
+    padding: 8px 0 0 0;
+}
+
+.ratings-stars-container img {
+    height: 24px;
+}
+
+.ratings-verified-reviews-container img {
+    height: 16px;
+    padding-bottom: 4px;
+}
+
+.ratings-average-value {
+    font-weight: 500;
+    padding-right: 5px;
+}
+
+.ratings-verified-reviews {
+    padding: 4px 8px 4px 0;
+    color: #3777BC;
+    cursor: pointer;
+}
+
+.ratings-verified-reviews:visited,
+.ratings-verified-reviews:hover {
+    color: #2C5F96;
+}
+
+.details-column {
+    display: flex;
+    flex-direction: column;
+}
+
+/*** Recall stuff that was still inline ***/
+.recallDetailRow td, .recallDetailRow {
+    border-top: 0 none !important
+}
+
+.recallToggle {
+    line-height: 12px;
+    width: 45.2%;
+    float: right;
+    margin: 3px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.recallToggle a {
+    text-decoration: none;
+    padding-left: 12px;
+}
+
+.recallText {
+    background: #fffbe7;
+    margin: 30px 1% 1% 1%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    box-sizing: border-box;
+    clear: both;
+    position: relative;
+    display: none;
+}
+
+.recallText p {
+    margin-bottom: 5px;
+}
+
+.recallText:after, .recallText:before {
+    bottom: 100%;
+    left: 55.5%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+}
+
+.recallText:after {
+    border-color: rgba(255, 251, 231, 0);
+    border-bottom-color: #fffbe7;
+    border-width: 9px;
+    margin-left: -9px;
+}
+
+.recallText:before {
+    border-color: rgba(204, 204, 204, 0);
+    border-bottom-color: #ccc;
+    border-width: 10px;
+    margin-left: -10px;
+}
+
+.bluetexticon {
+    color: #3777bc;
+}
+
+.material-icons-sharp.md-16 {
+    font-size: 16px;
+}
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    .material-icons-sharp { /* sharp icons don't work in ie for unknown reason */
+        font-family: 'Material Icons' !important;
+    }
+}
+
+@media print {
+    .showonprint {
+        display: block !important;
+    }
+
+    .bluetexticon i {
+        display: none;
+    }
+
+    .bluetexticon:before {
+        content: '-';
+    }
+
+    .recallText:before, .recallText:after {
+        display: none;
+    }
+}
+
+/*** New Facelift Stuffffffffffff ***/
+.vehicle-description {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 120%;
+    margin-bottom: 4px;
+}
+
+.vehicle-details {
+    font-size: 12px;
+    line-height: 1.17;
+}
+
+.section-description {
+    font-size: 12px;
+    color: #FFFFFF;
+    font-weight: normal;
+    white-space: nowrap;
+    min-width: 283px;
+}
+
+.column-radius{
+    padding-left:17px;
+}
+
+.disclaimer-section {
+    font-size: 12px;
+}
+
+.disclaimer-section p {
+    margin-top: 18px;
+}
+
+.history-overview-row strong {
+    margin-right: 2px;
+}
+
+.header-row-text {
+    font-size: 16px;
+    display: block;
+    line-height: 14px;
+    vertical-align: middle;
+}
+
+.header-icon-container {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+a {
+    color: #3777BC;
+}
+
+a:visited, a:hover {
+    color: #2C5F96;
+}
+
+a[rel="tooltip"] {
+    text-decoration: none;
+}
+
+#otherInformationTable strong {
+    font-weight: 500;
+}
+
+.additional-history-jump-link {
+    font-weight: 500;
+}
+
+.title-history-guaranteed {
+    font-weight: 700;
+    color: #7DC243;
+}
+
+.large-title-history-guaranteed {
+    font-weight: 700;
+    color: #7DC243;
+    font-size: 18px;
+}
+
+.owner-bar {
+    display: flex;
+    justify-content: space-between;
+    background-color: #D4E2F1;
+    height: 56px;
+    line-height: 1.5;
+    border-bottom: 1px solid #BDBDBD;
+    border-radius: 4px 4px 0 0;
+}
+
+.owner-bar.ownerXpert {
+    height: 86px;
+}
+
+.owner-desc {
+    padding: 6px 0 0 23px;
+    font-weight: 500;
+    display: flex;
+}
+
+.owner-desc-icon {
+    padding-top: 2px;
+}
+
+.owner-desc-text {
+    padding-left: 11px;
+    font-weight: normal;
+}
+
+.owner-number-text {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.owner-bar-right-side {
+    width: 165px;
+    display: flex;
+    flex-direction: column;
+    padding: 8px 16px 0 0;
+    text-align: right;
+}
+
+.owner-type {
+    text-transform: capitalize;
+}
+
+.parent-detail-line {
+    font-weight: 500;
+}

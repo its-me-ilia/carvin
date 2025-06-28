@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<svg fill="currentColor" height="24" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+  <g>
+    <path fill="#FBC02D" fill-rule="nonzero" stroke="#BA8E12" d="m12 2 10 10-10 10L2 12 12 2Zm1 13h-2v2h2v-2Zm0-7h-2v5h2V8Z"/>
+  </g>
+  <g>
+    <path fill="#5D4037" d="M13 15h-2v2h2v-2Zm0-7h-2v5h2V8Z"/>
+  </g>
+</svg>

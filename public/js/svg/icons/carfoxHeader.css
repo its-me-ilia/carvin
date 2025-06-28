@@ -1,0 +1,21 @@
+/* VHR HEADER */
+#vhrHeaderRow0 {width: 360px;}
+#vhrHeaderRow1 {width: 240px;}
+#vhrHeaderRow2 {width: 220px;}
+#vhrHeaderRow3 {width: 205px;}
+#vhrHeaderRow4 {width: 210px;}
+#vhrHeaderRow5 {width: 220px;}
+
+/* CHECKLIST HEADER */
+
+#chksum div { margin: 0; }
+#chksumXpert img {margin-right: -12px; margin-top: -188px; z-index: 1;}
+
+#chksumXpert img.oilChangeChecklistFox {
+	margin-top: -224px
+}
+
+#wmNewCarXpert{position: absolute; z-index: 1;bottom: 0;right: 0;}
+.wmXpertWrapper{position:relative;width: 430px; height: 220px;}
+.wmXpertWrapper p{position: absolute;top: 138px;left: 12px; width: 250px;}
+.headerWrapper{position: relative}

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<svg fill="currentColor" height="24" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+  <g>
+    <path fill="#FFFFFF" d="M11 13H7v6h4v-6Zm6 0h-4v4h4v-4Zm-5-3H5l3.5-4.9L12 10Z"/>
+  </g>
+  <g>
+    <path fill="#919191" d="M12 10H5l3.5-4.9L12 10Z"/>
+  </g>
+  <g>
+    <path fill="#919191" d="M21 21H3V10h18v11Zm-10-8H7v6h4v-6Zm6 0h-4v4h4v-4Z"/>
+  </g>
+  <g>
+    <path fill="#D32F2F" d="M7 3h10l5 7H12L8.5 5.1 5 10H2l5-7Z"/>
+  </g>
+</svg>

@@ -1,0 +1,189 @@
+body {margin: 0;}
+
+#checklist * {
+   margin: 0 auto;
+   padding: 0;
+   font-family: Arial, Helvetica, sans-serif;
+   font-size: 12px;
+   text-align: left;
+}
+
+#checklist #gutter label {
+   color: #336699;
+   font-weight: bold;
+}
+.XDinactive #sumTitle{
+   	color: #003366;
+   	font-weight: bold;
+   	padding: 10px 10px 5px 10px;	
+	border: 1px solid #ebe7cb !important;
+}
+#checklist .XDinactive{
+	background-color: #fffbe7;
+}
+#checklist .icoCol{
+	border: 1px solid #ebe7cb;
+	border-top: 0;
+	text-align: center;
+}
+#checklist .XDescCol{
+	border-bottom: 1px solid #ebe7cb;
+	padding-left: 3px;
+	text-align: left;
+	font-size: 12px;
+}
+#checklist #descp0, #checklist #descp1{width:315px;float:left}
+#checklist #descp2, #checklist #descp3, #checklist #descp4{width:275px;float:left}
+#checklist #descp5{width:300px;float:left}
+
+#checklist #gutter {
+   border: 3px solid #909db2;
+   border-bottom: 0;
+   padding: 10px;
+}
+#dlrMapPlaceholder, #dlrMapPlaceholder *{
+    cursor:pointer !important;	
+}
+#dlrMapPlaceholder {
+    visibility:hidden;
+    width: 200px !important; 
+    height: 160px !important; 
+    position: relative;
+}
+
+#dlrMap {
+    width: 200px !important; 
+    height: 160px !important; 
+    position: relative;
+}
+#checklist #chksum {
+   padding: 0px;
+}
+
+#chksum *{
+	  background: #fff !important;
+}
+#chksum td, #checklist .icoCol{
+   height: 30px;
+}
+
+#checklist #chklist {
+   border-top: 3px solid #909db2;
+   padding: 10px;
+}
+
+#checklist #noteArea {
+   padding: 10px;
+   color: #336699;
+   font-weight: bold;
+   border: 3px solid #909db2;
+   border-top: 0;
+}
+
+#rightBank {
+   border: 3px solid #909db2;
+   border-left: 0;
+}
+
+#chksum label {
+   font-weight: bold;
+}
+
+
+#chksum .hdrIcon {
+   text-align: center;
+}
+
+#chksumXpert {
+   text-align: right;
+}
+
+#chksumXpert img {margin-right: -12px; margin-top: -188px; z-index: 1;}
+#chksum div { margin: 0; }
+
+#chklist p {
+   margin-top: 15px;
+   color: #336699;
+   font-weight: bold;
+}
+
+#chklist .secDetail {
+   font-family: Tahoma, Arial, Helvetica, sans-serif;
+   font-size: 10px;
+   color: #000;
+   font-weight: normal;
+}
+
+#chklist #sectitle {
+   font-weight: bold;
+   color: #003366;
+   text-transform: uppercase;
+}
+
+#chklist ul {
+   margin-top: 3px;
+   margin-left: 10px;
+}
+
+#chklist li {
+    list-style: url(/img/vhr/chkbox.gif);
+   margin-left: 10px;
+   margin-top: 5px;
+   line-height: 140%;
+   font-size: 11px;
+}
+
+#gutter h6{
+   color: #336699;
+   font-weight:bold;
+}
+
+#gutter #dlrMap {
+   padding: 10px 0;
+}
+
+#gutter address {
+   font-style: normal;
+}
+
+textarea{
+	overflow:hidden;
+	width: 98%;
+}
+
+#chkNIL {
+   padding-top: 15px;
+}
+
+#noteArea #notebox {
+   border: 1px solid #336699;
+   min-height: 300px;
+   height: auto !important;
+   height: 300px;
+}
+
+#chkPrint {
+   text-align: right;
+   margin:10px;
+}
+
+#lastOdoReportedRow, #lastOdoReportedRow table {
+   padding: 0;margin:0
+}
+#lastOdoReportedRow label{
+   display: block; padding-right: 4px;
+}
+
+#headerVehicleInformation, #headerVin,  #headerDriveLine, 
+#dealer-name, #headerSectionVehicleLocationTitle, #dealer-city-state-zip, #headerPhone, #dealer-street2 {
+   display:block;
+}
+
+@MEDIA print {
+   #chkPrint {
+      display: none;
+   }
+	#checklist .XDinactive{
+	background-color: #fff;
+	}   
+}

@@ -1,0 +1,120 @@
+#printBar {
+    text-align: right;
+    padding: 5px;
+    display: inline-block;
+    height: 34px;
+}
+
+#printImage {
+    display: inline-block;
+    height: 24px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+#printText {
+    display: inline-block;
+    height: 24px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding-left: 8px;
+    vertical-align: middle
+}
+
+#printTextLink {
+    font-family: 'Roboto', 'Arial', sans-serif;
+    font-size: 16px;
+    text-decoration: none;
+    font-weight: 500;
+    color: #212121;
+}
+
+.languageToggleButton {
+    border: 1px solid;
+    padding: 5px 20px;
+    font-family: 'Roboto', 'Arial', sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 18px;
+    text-align: center;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.languageToggleLeftButton {
+    border-radius: 4px 0 0 4px;
+}
+
+.languageToggleRightButton {
+    border-radius: 0 4px 4px 0;
+    margin-left: -3px;
+}
+
+.selectedLanguageButton {
+    background-color: #3777BC;
+    border-color: #3777BC;
+    color: #FFFFFF;
+}
+
+.unselectedLanguageButton {
+    color: #3777BC;
+    border-color: #BDBDBD;
+    background-color: #FFFFFF;
+}
+
+.hotListingsSwitch {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 15px;
+}
+
+.hotListingsSwitch input {display:none;}
+
+.hotListingsSlider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.hotListingsSlider:before {
+    position: absolute;
+    content: "";
+    height: 22px;
+    width: 22px;
+    left: -4px;
+    bottom: -2px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+    box-shadow: 1px 1px rgba(128, 128, 128, 0.5);
+}
+
+input:checked + .hotListingsSlider {
+    background-color: #4776a9;
+}
+
+input:focus + .hotListingsSlider {
+    box-shadow: 0 0 1px #4776a9;
+}
+
+input:checked + .hotListingsSlider:before {
+    -webkit-transform: translateX(22px);
+    -ms-transform: translateX(22px);
+    transform: translateX(22px);
+}
+
+/* Rounded sliders */
+.hotListingsSlider.round {
+    border-radius: 34px;
+}
+
+.hotListingsSlider.round:before {
+    border-radius: 50%;
+}
