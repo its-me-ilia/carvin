@@ -8,20 +8,32 @@ export const Report: React.FC<IReportProps> = ({ report }) => {
   useEffect(() => {
     if (report) {
       const reportDom = new DOMParser().parseFromString(report, "text/html");
+
       const languages = [
         { code: "ka", flag: "🇬🇪" },
         { code: "ru", flag: "🇷🇺" },
         { code: "en", flag: "🇬🇧" },
       ];
-      const currentLang = reportDom.documentElement.lang || "en";
-      // Build the buttons HTML string
+
+      // Try to detect current language from document or cookies
+      let currentLang = reportDom.documentElement.lang || "en";
+      currentLang = currentLang.toLowerCase();
+
+      // Check cookie in case Google Translate has overridden the language
+      const cookieLangMatch = document.cookie.match(/googtrans=\/auto\/(\w{2})/);
+      if (cookieLangMatch && cookieLangMatch[1]) {
+        currentLang = cookieLangMatch[1];
+      }
+
+      // Build the buttons HTML string (excluding current language)
       const buttonsHtml = languages
-        .filter(({ code }) => code !== currentLang)
+        .filter(({ code }) => code.toLowerCase() !== currentLang)
         .map(
-          ({ code, flag }) =>
-            `<button class="lang-btn" data-lang="${code}" style="background-color:orange;color:white;border:none;padding:10px 20px;font-size:20px;cursor:pointer;border-radius:4px;margin-right:8px;position:relative;z-index:2147483647;">${flag}</button>`
+          ({ code, flag }, idx) =>
+            `<button class="lang-btn" data-lang="${code}" style="background-color:orange;color:white;border:none;padding:10px 20px;font-size:20px;cursor:pointer;border-radius:4px;margin-right:8px;left: ${idx * 70 + 10};top: 5px; position:fixed;z-index:2147483647;">${flag}</button>`
         )
         .join("");
+
       // Script to attach event listeners in the new document
       const scriptHtml = `
         <script>
@@ -37,10 +49,11 @@ export const Report: React.FC<IReportProps> = ({ report }) => {
           })();
         <\/script>
       `;
+
       // Google Translate widget HTML and scripts
       const googleTranslateWidget = `
-        <div id=\"google_translate_element\" style=\"display:none\"></div>
-        <script type=\"text/javascript\">
+        <div id="google_translate_element" style="display:none"></div>
+        <script type="text/javascript">
           function googleTranslateElementInit() {
             new google.translate.TranslateElement({
               pageLanguage: 'en',
@@ -49,15 +62,17 @@ export const Report: React.FC<IReportProps> = ({ report }) => {
             }, 'google_translate_element');
           }
         <\/script>
-        <script type=\"text/javascript\" src=\"//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit\"></script>
+        <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
       `;
-      reportDom.body.innerHTML = buttonsHtml + googleTranslateWidget + scriptHtml + reportDom.body.innerHTML;
+
+      reportDom.body.innerHTML =
+        buttonsHtml + googleTranslateWidget + scriptHtml + reportDom.body.innerHTML;
+
       document.open();
       document.write(reportDom.documentElement.outerHTML);
       document.close();
     }
   }, [report]);
 
-  // Render nothing, as the page will be replaced
-  return null;
+  return null; // The component doesn't render React content
 };
