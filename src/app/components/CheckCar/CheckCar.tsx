@@ -48,6 +48,7 @@ export const CheckCar: React.FC<ICheckCarProps> = ({
           className={vinError ? styles.erroredInput : ""}
           value={vin}
           type="text"
+          maxLength={17}
           onChange={(e) => handleVinValue(e.target.value)}
           placeholder="ჩაწერეთ VIN კოდი"
         />
