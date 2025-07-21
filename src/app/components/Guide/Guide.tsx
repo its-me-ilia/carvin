@@ -14,7 +14,7 @@ export const Guide: React.FC<IGuideProps> = ({ isActive, handleClose }) =>
         <CloseIcon />
       </div>
       <video
-        src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
+        src="guide.mp4"
         onClick={(ev) => ev.stopPropagation()}
         autoPlay
         controls
