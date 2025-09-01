@@ -12,8 +12,13 @@ interface ICarMainInfoProps {
 export const CarMainInfo: React.FC<ICarMainInfoProps> = ({ carInfo }) => {
   const engineSize = carInfo[0].DisplacementL;
 
-  const formattedEngineSize = Number(engineSize) > 0 ? Number(engineSize).toFixed(1) : engineSize
-  console.log(engineSize);
+  const formattedEngineSize = Number(engineSize) > 0 ? Number(engineSize).toFixed(1) : 'ელექტრო'
+
+  const formattedModel =
+    ((carInfo[0].Model.includes('Series') || carInfo[0].Model.includes('Class'))
+      ? carInfo[0].Series
+      : carInfo[0].Model) + ' ' + (carInfo[0].Make === 'LEXUS' ? carInfo[0].Trim : '')
+
   return (
     <div className={styles.carInfoCont}>
       <div>
@@ -40,7 +45,7 @@ export const CarMainInfo: React.FC<ICarMainInfoProps> = ({ carInfo }) => {
         </div>
         <div>
           <span>მოდელი</span>
-          <h4>{carInfo[0].Model}</h4>
+          <h4>{formattedModel}</h4>
         </div>
       </div>
       <div>

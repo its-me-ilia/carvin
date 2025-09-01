@@ -5,4 +5,5 @@ export interface ICarInfo {
     Model: string
     VIN: string
     Trim: string
+    Series: string
 }
