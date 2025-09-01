@@ -1,23 +1,17 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 
 interface IReportProps {
   report: string;
 }
 
 export const Report: React.FC<IReportProps> = ({ report }) => {
-  useEffect(() => {
-    // --- watchdog: reload page if loader hangs for >30s ---
-    const reloadTimeout = setTimeout(() => {
-      if (!report) {
-        window.location.reload();
-      }
-    }, 30000);
+  const [isProcessing, setIsProcessing] = useState(false);
 
+  useEffect(() => {
     if (report) {
       // Loader succeeded, cancel watchdog
-      clearTimeout(reloadTimeout);
-
-      setTimeout(() => {
+      setIsProcessing(true);
+      const processReport = setTimeout(() => {
         const reportDom = new DOMParser().parseFromString(report, "text/html");
 
         const languages = [
@@ -112,16 +106,19 @@ export const Report: React.FC<IReportProps> = ({ report }) => {
         document.open();
         document.write(reportDom.documentElement.outerHTML);
         document.close();
-      }, 100);
-    }
+        setIsProcessing(false);
+      }, 1000);
 
-    return () => {
-      clearTimeout(reloadTimeout); // cleanup on unmount
-    };
+      return () => {
+        setIsProcessing(false);
+        clearTimeout(processReport);
+      };
+    }
   }, [report]);
 
-  return (
-    <div
+  if (isProcessing) {
+    return (
+      <div
       style={{
         height: "100vh",
         display: "flex",
@@ -153,5 +150,8 @@ export const Report: React.FC<IReportProps> = ({ report }) => {
         </path>
       </svg>
     </div>
-  );
+    );
+  }
+
+  return null;
 };
