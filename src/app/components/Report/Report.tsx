@@ -6,8 +6,17 @@ interface IReportProps {
 
 export const Report: React.FC<IReportProps> = ({ report }) => {
   useEffect(() => {
+    // --- watchdog: reload page if loader hangs for >30s ---
+    const reloadTimeout = setTimeout(() => {
+      if (!report) {
+        window.location.reload();
+      }
+    }, 30000);
+
     if (report) {
-      // Delay to allow React loader to render
+      // Loader succeeded, cancel watchdog
+      clearTimeout(reloadTimeout);
+
       setTimeout(() => {
         const reportDom = new DOMParser().parseFromString(report, "text/html");
 
@@ -103,8 +112,12 @@ export const Report: React.FC<IReportProps> = ({ report }) => {
         document.open();
         document.write(reportDom.documentElement.outerHTML);
         document.close();
-      }, 100); // Delay to allow loader to show
+      }, 100);
     }
+
+    return () => {
+      clearTimeout(reloadTimeout); // cleanup on unmount
+    };
   }, [report]);
 
   return (
