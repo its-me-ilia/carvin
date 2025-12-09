@@ -18,8 +18,8 @@ export const Footer = () => {
             <Link href={"/terms"}>წესები და პირობები</Link>
           </div>
           <div className="flex items-center space-x-2 text-sm text-gray-600">
-            <Link href="mailto:info@vinmeter.ge" className="hover:underline">
-              info@vinmeter.ge
+            <Link href="mailto:info@vinmeter.com" className="hover:underline">
+              info@vinmeter.com
             </Link>
           </div>
         </div>
