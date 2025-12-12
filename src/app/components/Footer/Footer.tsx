@@ -18,16 +18,9 @@ export const Footer = () => {
             <Link href={"/terms"}>წესები და პირობები</Link>
           </div>
           <div className="flex items-center space-x-2 text-sm text-gray-600">
-            <Link href="mailto:info@vinauto.ge" className="hover:underline">
-              info@vinauto.ge
+            <Link href="mailto:info@vinmeter.com" className="hover:underline">
+              info@vinmeter.com
             </Link>
-            <span aria-hidden="true">•</span>
-            <Link href="tel:+995551094335" className="hover:underline">
-              +995 551 094 335
-            </Link>
-          </div>
-          <div>
-            <p>თბილისი, მ. წინამძღვრიშვილის 112</p>
           </div>
         </div>
       </div>
