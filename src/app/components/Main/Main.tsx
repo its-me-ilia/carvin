@@ -35,10 +35,6 @@ export const Main = () => {
         setLoading(false);
       }
     } catch (error) {
-      console.error(error);
-    }
-
-    try {
       const fallbackRes = await axios.get(
         `https://vin-decoder19.p.rapidapi.com/vin_decoder_extended?vin=${vin}`,
         {
@@ -68,8 +64,7 @@ export const Main = () => {
       } else {
         setLoading(false);
       }
-    } catch (err) {
-      console.error("Both APIs failed:", err);
+      console.error(error);
     }
   }, [vin, loading, setVinError]);
 
