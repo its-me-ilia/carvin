@@ -54,14 +54,16 @@ export const Main = () => {
             ModelYear: spec.Model_Year.value,
             Make: spec.Make.value,
             Model: spec.Model.value,
-            DisplacementL: spec.Engine_Displacement.value,
+            DisplacementL: spec?.Engine_Displacement?.value || spec?.Engine_Type.value,
             VIN: spec.VIN,
             Trim: spec.Trim_Level.value,
             Series: spec.Trim_Level.value
           },
         ]);
+        console.log(2222);
         setLoading(false);
       } else {
+        setVinError(true);
         setLoading(false);
       }
       console.error(error);
