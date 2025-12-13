@@ -20,7 +20,7 @@ export const BuyReport: React.FC<IBuyReportProps> = ({ vin, reportOption }) => {
       const result = await axios.post(
         `https://7eiz8lnr0m.execute-api.eu-north-1.amazonaws.com/purchase`,
         {
-          email: "toko.topcha@gmail.com",
+          email: "xwtxpjgarwrqritywa@enotj.com",
           vinCode: vin,
           reportOption: reportOption,
         }
