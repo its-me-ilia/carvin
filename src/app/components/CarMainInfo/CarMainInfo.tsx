@@ -16,7 +16,7 @@ export const CarMainInfo: React.FC<ICarMainInfoProps> = ({ carInfo }) => {
 
   const formattedModel =
     ((carInfo[0].Model.includes('Series') || carInfo[0].Model.includes('Class'))
-      ? carInfo[0].Series
+      ? carInfo[0].Trim
       : carInfo[0].Model) + ' ' + (carInfo[0].Make === 'LEXUS' ? carInfo[0].Trim : '')
 
   return (

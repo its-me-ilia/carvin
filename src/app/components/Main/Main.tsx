@@ -19,7 +19,7 @@ export const Main = () => {
 
     setLoading(true);
     try {
-      const nhtsaRes = await axios.get(
+      {const nhtsaRes = await axios.get(
         `https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValuesExtended/${vin}?format=json`
       );
 
@@ -33,7 +33,7 @@ export const Main = () => {
       } else {
         setVinError(true);
         setLoading(false);
-      }
+      }}
     } catch (error) {
       const fallbackRes = await axios.get(
         `https://vin-decoder19.p.rapidapi.com/vin_decoder_extended?vin=${vin}`,
