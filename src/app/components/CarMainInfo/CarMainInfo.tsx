@@ -11,7 +11,6 @@ interface ICarMainInfoProps {
 
 export const CarMainInfo: React.FC<ICarMainInfoProps> = ({ carInfo }) => {
   const engineSize = carInfo[0].DisplacementL;
-
   const formattedEngineSize = Number(engineSize) === 0 ? 'ელექტრო' : Number(engineSize) ? Number(engineSize).toFixed(1) : engineSize;
 
   const formattedModel =
