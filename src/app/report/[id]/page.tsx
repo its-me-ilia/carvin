@@ -8,22 +8,29 @@ const ReportPage = () => {
   const { id } = useParams();
   const [report, setReport] = useState("");
 
-  useEffect(() => {
-    const getReport = async () => {
-      try {
-        const response = await axios.get(
-          `https://7eiz8lnr0m.execute-api.eu-north-1.amazonaws.com/get-report-html?order_id=${id}`
-        );
-        if (response.data) {
-          setReport(response.data);
-        }
-      } catch (err) {
-        window.location.reload()
-        console.log(err);
+useEffect(() => {
+  const getReport = async () => {
+    try {
+      // 1️⃣ Get the presigned URL
+      const response = await axios.get(
+        `https://7eiz8lnr0m.execute-api.eu-north-1.amazonaws.com/get-report-html-presigned?order_id=${id}`
+      );
+
+      const presignedUrl = response.data;
+
+      if (presignedUrl) {
+        const reportResponse = await axios.get(presignedUrl);
+        setReport(reportResponse.data);
       }
-    };
-    setTimeout(getReport, 10000);
-  }, [id]);
+    } catch (err) {
+      console.log(err);
+      window.location.reload();
+    }
+  };
+
+  setTimeout(getReport, 10000);
+}, [id]);
+
 
   if (report.length === 0) {
     return (
