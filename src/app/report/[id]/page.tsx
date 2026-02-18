@@ -22,7 +22,7 @@ const ReportPage = () => {
         console.log(err);
       }
     };
-    getReport();
+    setTimeout(getReport, 10000);
   }, [id]);
 
   if (!report) {
