@@ -1,0 +1,21 @@
+.maintenance {
+    height: 100vh;
+    width: 100vw;
+    top: 0;
+    left: 0;
+    position: fixed;
+    z-index: 9999999;
+    background-color: #248cec;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+
+    h1 {
+        text-align: center;
+        margin-bottom: 2em;
+        display: inline-block;
+    }
+}

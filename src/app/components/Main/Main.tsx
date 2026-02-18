@@ -7,6 +7,9 @@ import { VinReport } from "../VinReport/VinReport";
 import { useCallback, useEffect, useState } from "react";
 import axios from "axios";
 import { ICarInfo } from "@/app/types";
+import { Maintenance } from "../Maintenance/Maintenance";
+
+const isMaintenance = true;
 
 export const Main = () => {
   const [vin, setVin] = useState("");
@@ -88,7 +91,10 @@ export const Main = () => {
     }
   };
 
-  console.log(loading);
+  if(isMaintenance) {
+    return <Maintenance />
+  }
+
 
   return (
     <div className={styles.mainWrapper}>
