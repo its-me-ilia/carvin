@@ -9,7 +9,7 @@ import axios from "axios";
 import { ICarInfo } from "@/app/types";
 import { Maintenance } from "../Maintenance/Maintenance";
 
-const isMaintenance = true;
+const isMaintenance = false;
 
 export const Main = () => {
   const [vin, setVin] = useState("");

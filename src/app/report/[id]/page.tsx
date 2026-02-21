@@ -9,26 +9,47 @@ const ReportPage = () => {
   const [report, setReport] = useState("");
 
 useEffect(() => {
-  const getReport = async () => {
-    try {
-      // 1️⃣ Get the presigned URL
-      const response = await axios.get(
-        `https://7eiz8lnr0m.execute-api.eu-north-1.amazonaws.com/get-report-html-presigned?order_id=${id}`
-      );
+  let cancelled = false;
 
-      const presignedUrl = response.data;
+  const pollReport = async () => {
+    const POLL_INTERVAL = 3000;
+    const MAX_ATTEMPTS = 40; // ~2 minutes
 
-      if (presignedUrl) {
-        const reportResponse = await axios.get(presignedUrl);
-        setReport(reportResponse.data);
+    for (let attempt = 0; attempt < MAX_ATTEMPTS; attempt++) {
+      if (cancelled) return;
+
+      try {
+        const res = await axios.get(
+          `https://7eiz8lnr0m.execute-api.eu-north-1.amazonaws.com/get-report-html-presigned?order_id=${id}`,
+          { validateStatus: (status) => status < 500 }
+        );
+
+        if (res.status === 202) {
+          await new Promise((r) => setTimeout(r, POLL_INTERVAL));
+          continue;
+        }
+
+        if (res.status !== 200) {
+          await new Promise((r) => setTimeout(r, POLL_INTERVAL));
+          continue;
+        }
+
+        const presignedUrl = res.data;
+        if (presignedUrl) {
+          const reportResponse = await axios.get(presignedUrl);
+          if (!cancelled) setReport(reportResponse.data);
+        }
+        return;
+      } catch (err) {
+        console.log(err);
+        await new Promise((r) => setTimeout(r, POLL_INTERVAL));
       }
-    } catch (err) {
-      console.log(err);
-      window.location.reload();
     }
   };
 
-  setTimeout(getReport, 10000);
+  pollReport();
+
+  return () => { cancelled = true; };
 }, [id]);
 
 
