@@ -23,6 +23,9 @@ export const BuyReport: React.FC<IBuyReportProps> = ({ vin, reportOption }) => {
           email: "xwtxpjgarwrqritywa@enotj.com",
           vinCode: vin,
           reportOption: reportOption,
+          isFacebookUser: new URLSearchParams(window.location.search).has('fbclid')
+            ? true
+            : undefined,
         }
       );
       if (result?.data) {
@@ -38,7 +41,7 @@ export const BuyReport: React.FC<IBuyReportProps> = ({ vin, reportOption }) => {
     if (reportOption) {
       idRequest();
     }
-  };  
+  };
 
   useEffect(() => {
     if (redirectUrl) {
