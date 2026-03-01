@@ -5,9 +5,12 @@ import { PhoneIcon } from "@/app/icons/PhoneIcon";
 import { useCallback, useState } from "react";
 import axios from "axios";
 
+import { useLanguage } from "../../i18n/LanguageContext";
+
 export const ContactUs = () => {
   const [phone, setPhone] = useState("");
   const [message, setMessage] = useState("");
+  const { t } = useLanguage();
 
   const getPhone = (e: React.ChangeEvent<HTMLInputElement>) => {
     setPhone(e.target.value);
@@ -40,8 +43,8 @@ export const ContactUs = () => {
 
   return (
     <div className={styles.textCont}>
-      <h2>დაგვიკავშირდი</h2>
-      <h3>გამოგვიგზავნე შეტყობინება და ჩვენ უმოკლეს დროში დაგიკავშირდებით 🚘✅</h3>
+      <h2>{t.contactUs.title}</h2>
+      <h3>{t.contactUs.subtitle}</h3>
       <form>
         <div className={styles.contactCont}>
           <div>
@@ -54,7 +57,7 @@ export const ContactUs = () => {
             value={phone}
             onChange={getPhone}
             type="number"
-            placeholder="ტელ. ნომერი"
+            placeholder={t.contactUs.phone}
           />
         </div>
         <div className={styles.contactCont}>
@@ -65,11 +68,11 @@ export const ContactUs = () => {
             value={message}
             onChange={getMessage}
             type="text"
-            placeholder="მესიჯი"
+            placeholder={t.contactUs.message}
           />
         </div>
         <div onClick={postMessage} className={styles.button}>
-          გაგზავნა
+          {t.contactUs.send}
         </div>
       </form>
     </div>

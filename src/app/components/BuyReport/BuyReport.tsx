@@ -3,6 +3,7 @@ import { LoadingIcon } from "@/app/icons/LoadingIcon";
 import axios from "axios";
 import { useCallback, useEffect, useState } from "react";
 import styles from "./BuyReport.module.scss";
+import { useLanguage } from "../../i18n/LanguageContext";
 
 interface IBuyReportProps {
   vin: string
@@ -13,6 +14,7 @@ export const BuyReport: React.FC<IBuyReportProps> = ({ vin, reportOption }) => {
   const [id, setId] = useState("");
   const [redirectUrl, setRedirectUrl] = useState('')
   const [loading, setLoading] = useState(false);
+  const { t } = useLanguage();
 
   const idRequest = useCallback(async () => {
     setLoading(true);
@@ -57,12 +59,12 @@ export const BuyReport: React.FC<IBuyReportProps> = ({ vin, reportOption }) => {
       {loading ? (
         <div>
           <LoadingIcon />
-          <span>იტვირთება...</span>
+          <span>{t.buyReport.loading}</span>
         </div>
       ) : (
         <div>
           <DocumentIcon />
-          <span>რეპორტის შეძენა</span>
+          <span>{t.buyReport.buyReport}</span>
         </div>
       )}
     </button>
