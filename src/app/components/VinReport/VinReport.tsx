@@ -8,6 +8,8 @@ import Link from "next/link";
 import { ICarInfo } from "@/app/types";
 import { useState } from "react";
 
+import { useLanguage } from "../../i18n/LanguageContext";
+
 interface IVinReport {
   vin: string
   carInfo: ICarInfo[]
@@ -16,25 +18,26 @@ interface IVinReport {
 
 export const VinReport: React.FC<IVinReport> = ({ vin, carInfo, setCarInfo }) => {
   const [reportOption, setReportOption] = useState('carfax')
+  const { t } = useLanguage();
   return (
     <div className={styles.vinReport}>
       <div>
         <BackToCheck setCarInfo={setCarInfo}/>
-        <h1>აირჩიეთ სასურველი რეპორტი</h1>
-        <p>მიიღება ყველა სახის საბანკო ბარათი</p>
+        <h1>{t.vinReport.chooseReport}</h1>
+        <p>{t.vinReport.allCardsAccepted}</p>
         <h3 className={styles.vin}>VIN: {vin}</h3>
         <CarMainInfo carInfo={carInfo}/>
         <div className={styles.hr}></div>
         <ReportOptions reportOption={reportOption} setReportOption={setReportOption}/>
         <div className={styles.buyReportCont}>
           <h3>
-            რეპორტის ფასი:{" "}
+            {t.vinReport.reportPrice}{" "}
             <span className={styles.finalPrice}>
               {reportOption ? (reportOption === "carfax" ? '7.99' : '4.99') : 0}₾
             </span>
           </h3>
           <BuyReport reportOption={reportOption} vin={vin}/>
-          <h4>გაგრძელებით ეთანხმებით <Link href={'terms'}>წესებსა და პირობებს</Link></h4>
+          <h4>{t.vinReport.agreeTo} <Link href={'terms'}>{t.vinReport.termsLink}</Link></h4>
         </div>
       </div>
     </div>
