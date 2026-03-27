@@ -5,6 +5,8 @@ import { CheckButton } from "../CheckButton/CheckButton";
 import { Guide } from "../Guide/Guide";
 import { useEffect, useState } from "react";
 
+import { useLanguage } from "../../i18n/LanguageContext";
+
 interface ICheckCarProps {
   vin: string;
   setVin: React.Dispatch<React.SetStateAction<string>>;
@@ -23,6 +25,7 @@ export const CheckCar: React.FC<ICheckCarProps> = ({
   setVinError,
 }) => {
   const [guideActive, setGuideActive] = useState(false);
+  const { t } = useLanguage();
 
   const handleVinValue = (value: string) => {
     setVin(value.toUpperCase());
@@ -50,17 +53,17 @@ export const CheckCar: React.FC<ICheckCarProps> = ({
           type="text"
           maxLength={17}
           onChange={(e) => handleVinValue(e.target.value)}
-          placeholder="ჩაწერეთ VIN კოდი"
+          placeholder={t.checkCar.placeholder}
         />
         <CheckButton loading={loading} handleClick={handleClick} />
       </div>
       <div className={styles.helpCont}>
         <p className={styles.errorMessage}>
-          {vinError && <span>VIN კოდი არასწორია</span>}
+          {vinError && <span>{t.checkCar.vinError}</span>}
         </p>
         <p onClick={() => setGuideActive(true)} className={styles.pointer}>
           <PlayIcon />
-          <span className={styles.dottedText}>როგორ შევამოწმო?</span>
+          <span className={styles.dottedText}>{t.checkCar.howToCheck}</span>
         </p>
       </div>
     </div>

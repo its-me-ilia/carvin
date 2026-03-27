@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useLanguage } from "../../i18n/LanguageContext";
 
 interface IReportProps {
   report: string;
@@ -6,6 +7,7 @@ interface IReportProps {
 
 export const Report: React.FC<IReportProps> = ({ report }) => {
   const [isProcessing, setIsProcessing] = useState(false);
+  const { t } = useLanguage();
 
   useEffect(() => {
     if (report) {
@@ -50,7 +52,7 @@ export const Report: React.FC<IReportProps> = ({ report }) => {
             style="background-color:#333;color:white;border:none;padding:10px 20px;
             font-size:20px;cursor:pointer;border-radius:4px;
             right:10px;top:5px;position:fixed;z-index:2147483647;">
-            გადმოწერა
+            ${t.report.download}
           </button>
         `;
 
@@ -114,7 +116,7 @@ export const Report: React.FC<IReportProps> = ({ report }) => {
         clearTimeout(processReport);
       };
     }
-  }, [report]);
+  }, [report, t.report.download]);
 
   if (isProcessing) {
     return (
